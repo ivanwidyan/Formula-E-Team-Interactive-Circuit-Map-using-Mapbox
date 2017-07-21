@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Formula E</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.0/mapbox-gl.js'></script>
+
+    <link href="css/index.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="navbar-wrapper">
+      	<div class="container">
+       		<nav class="navbar-default navbar-static-top">
+          		<div class="container">
+            		<div class="navbar-header">
+              			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			                <span class="sr-only">Toggle navigation</span>
+			                <span class="icon-bar"></span>
+			                <span class="icon-bar"></span>
+			                <span class="icon-bar"></span>
+             			</button>
+              		<a class="navbar-brand" href="index.html"><img style="height: 100%; padding: 5px;" src="http://www.fiaformulae.com/img/formula-e_logo.svg"></a>
+            	</div>
+            	<div id="navbar" class="navbar-collapse collapse">
+	            <ul class="nav navbar-nav">
+	                <li class="dropdown">
+	                  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEWS <span class="caret"></span></a>
+	                  	<ul class="dropdown-menu">
+		                    <li><a href="#">LATEST</a></li>
+		                    <li><a href="#">VIDEOS</a></li>
+		                    <li><a href="#">PHOTOS</a></li>
+	                  	</ul>
+	                </li>
+	                <li><a href="#contact">CALENDAR</a></li>
+	                <li class="dropdown">
+	                  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CHAMPIONSHIP <span class="caret"></span></a>
+	                  	<ul class="dropdown-menu">
+		                    <li><a href="#">TEAM & DRIVERS</a></li>
+		                    <li><a href="#">FANBOOST</a></li>
+		                    <li><a href="#">REGULATIONS</a></li>
+	                  	</ul>
+	                </li>
+	                <li class="dropdown">
+	                  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RESULTS <span class="caret"></span></a>
+	                  	<ul class="dropdown-menu">
+		                    <li><a href="#">LATEST</a></li>
+		                    <li><a href="#">VIDEOS</a></li>
+		                    <li><a href="#">PHOTOS</a></li>
+	                  	</ul>
+	                </li>
+	                <li class="dropdown">
+	                  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MORE <span class="caret"></span></a>
+	                  	<ul class="dropdown-menu">
+		                    <li><a href="#">OVERVIEW</a></li>
+		                    <li><a href="#">EVILLAGE</a></li>
+		                    <li><a href="#">MUSIC</a></li>
+		                    <li><a href="#">SUSTAINABILITY</a></li>
+		                    <li><a href="#">SHOP</a></li>
+	                  	</ul>
+	                </li>
+	                <li class="dropdown">
+	                  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TICKETS <span class="caret"></span></a>
+	                  	<ul class="dropdown-menu">
+		                    <li><a href="#">MONACO</a></li>
+		                    <li><a href="#">PARIS</a></li>
+		                    <li><a href="#">BERLIN</a></li>
+		                    <li><a href="#">NEW YORK CITY</a></li>
+		                    <li><a href="#">MONTREAL</a></li>
+	                  	</ul>
+	                </li>
+	                <li><a href="#contact">HOW TO WATCH</a></li>
+	            </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- CAROUSEL -->
+    <div id="myCarousel" class="carousel slide">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+	    <div class="item active">
+		    <div class="carousel-image" style="background-image: url(http://d3iyn1f5w83nva.cloudfront.net/media/305343/paris-story-launch.jpg?anchor=center&mode=crop&quality=80&width=1980&rnd=131362872400000000)">
+		    </div>
+        	<div class="container">
+	            <div class="carousel-caption">
+	            	<div class="date-place">
+		            	<h5>Paris | 10 April, 2017</h5>
+	            	</div>
+	              	<h1>Ticket now on sale for Paris ePrix</h1>
+	            </div>
+          	</div>
+          	<a href="http://www.fiaformulae.com/en/news/2017/april/tickets-now-on-sale-for-paris-eprix/"><span></span></a>
+	    </div>
+        <div class="item">
+        	<div class="carousel-image" style="background-image: url(http://d3iyn1f5w83nva.cloudfront.net/media/305335/1-_56i7110.jpg?anchor=center&mode=crop&quality=80&width=2560&rnd=131360320730000000" alt="Second slide"></div>
+        	<div class="container">
+	            <div class="carousel-caption">
+	            <div class="date-place">
+	            	<h5>Mexico City | 07 April, 2017</h5>
+            	</div>
+	              	<h1>Abt proud of Mexico win</h1>
+	            </div>
+          	</div>
+        </div>
+        <div class="item">
+        	<div class="carousel-image" style="background-image: url(http://d3iyn1f5w83nva.cloudfront.net/media/305269/_56i4857.jpg?width=2560" alt="Third slide)"></div>
+        	<div class="container">
+	            <div class="carousel-caption">
+	            	<div class="date-place">
+		            	<h5>Mexico City | 01 April, 2017</h5>
+	            	</div>
+	              	<h1>Top Shots: Julius Baer Mexico City ePrix</h1>
+	            </div>
+          	</div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+     <div id='map'></div>
+	 <div id='features'>
+	    <section id='monaco'>
+	    	<div class="inner-section">
+	    		<h2>R5 | 13 MAY 2017</h2>
+	    		<h3><img height="25px" width="auto" src="http://www.fiaformulae.com/img/flags/mc.svg"> MONACO, MC</h3>
+	    		<h4>Circuit of Monaco - Monaco ePrix</h4>
+	    		<table class="table">
+				    <tbody>
+				      	<tr>
+					        <td class="text-left">Visa Fastest Lap</td>
+					        <td class="text-right">Jean-Éric Vergne</td>
+				      	</tr>
+				      	<tr>
+					        <td class="text-left">Previous Winner</td>
+					        <td class="text-right">Sébastian Buemi</td>
+				      	</tr>
+				      	<tr>
+					        <td class="text-left">Track Direction</td>
+					        <td class="text-right">Clockwise</td>
+				      	</tr>
+				      	<tr><td></td><td></td></tr>
+				    </tbody>
+				</table>
+				<div class="row bottom-buffer">
+					<div class="col-sm-6 right-divider">
+						<h3>1.76 <small>KM</small></h3>
+						<h5>LENGTH</h5>
+					</div>
+					<div class="col-sm-6">
+						<h3>12</h3>
+						<h5>TURNS</h5>
+					</div>
+				</div>
+				<a href="signin.html" class="btn btn-primary btn-lg btn-block">
+			      	<span class="glyphicon glyphicon-credit-card"></span> BUY TICKETS 
+			    </a>
+	    	</div>
+	    </section>
+	    <section id='paris'>
+	        <div class="inner-section">
+	    		<h2>R6 | 20 MAY 2017</h2>
+	    		<h3><img height="25px" width="auto" src="http://www.fiaformulae.com/img/flags/fr.svg"> PARIS, FR</h3>
+	    		<h4>Circuit des Invalides - Paris ePrix</h4>
+	    		<table class="table">
+				    <tbody>
+				      	<tr>
+					        <td class="text-left">Visa Fastest Lap</td>
+					        <td class="text-right">Nick Heidfeld</td>
+				      	</tr>
+				      	<tr>
+					        <td class="text-left">Previous Winner</td>
+					        <td class="text-right">Lucas di Grassi</td>
+				      	</tr>
+				      	<tr>
+					        <td class="text-left">Track Direction</td>
+					        <td class="text-right">Clockwise</td>
+				      	</tr>
+				    </tbody>
+				</table>
+				<div class="row bottom-buffer">
+					<div class="col-lg-6 right-divider">
+						<h3>1.93 <small>KM</small></h3>
+						<h5>LENGTH</h5>
+					</div>
+					<div class="col-lg-6">
+						<h3>14</h3>
+						<h5>TURNS</h5>
+					</div>
+				</div>
+				<a href="signin.html" class="btn btn-primary btn-lg btn-block">
+			      	<span class="glyphicon glyphicon-credit-card"></span> BUY TICKETS 
+			    </a>
+	    	</div>
+	    </section>
+	    <section id='berlin'>
+	        <div class="inner-section">
+	    		<h2>R7 | 10 JUNE 2017</h2>
+	    		<h3><img height="25px" width="auto" src="http://www.fiaformulae.com/img/flags/de.svg"> BERLIN, DE</h3>
+	    		<h4>Circuit of Berlin - Berlin ePrix</h4>
+	    		<table class="table">
+				    <tbody>
+				      	<tr>
+					        <td class="text-left">Visa Fastest Lap</td>
+					        <td class="text-right">-</td>
+				      	</tr>
+				      	<tr>
+					        <td class="text-left">Previous Winner</td>
+					        <td class="text-right">-</td>
+				      	</tr>
+				      	<tr>
+					        <td class="text-left">Track Direction</td>
+					        <td class="text-right">-</td>
+				      	</tr>
+				    </tbody>
+				</table>
+				<div class="row bottom-buffer">
+					<div class="col-lg-6 right-divider">
+						<h3>2.030 <small>KM</small></h3>
+						<h5>LENGTH</h5>
+					</div>
+					<div class="col-lg-6">
+						<h3>11</h3>
+						<h5>TURNS</h5>
+					</div>
+				</div>
+				<a href="signin.html" class="btn btn-primary btn-lg btn-block">
+			      	<span class="glyphicon glyphicon-credit-card"></span> BUY TICKETS 
+			    </a>
+	    	</div>
+	    </section>
+	</div>
+
+	<div id="belowMap">
+
+		<div class="container latest-media">
+	    	<div class="top-buffer">
+	    		<h1>LATEST MEDIA</h1>
+	    	</div>
+	    	<div class="row top-buffer bottom-buffer">
+	          	<div class="col-md-3">
+	          		<img src="img/latest-media/1.jpg" alt="Lights" style="width:100%; height:auto;">
+	          		<h4><strong>19Apr, 2017</strong></h4>
+	          		<h2>460bhp Formula E-Engined Hot Hatch! Renault ZOE e-Sport</h2>
+			    </div>
+		        <div class="col-md-3">
+			        <img src="img/latest-media/2.jpg" alt="Lights" style="width:100%; height:auto;">
+		            <h4><strong>London, UK | 19Apr, 2017</strong></h4>
+			        <h2>Insight: Williams'updated battery</h2>
+			    </div>
+		        <div class="col-md-3">
+			        <img src="img/latest-media/3.jpg" alt="Lights" style="width:100%; height:auto;">
+		            <h4><strong>Paris | 19Apr, 2017</strong></h4>
+			        <h2>From dream to reality: Formula E was born in Paris</h2>
+			    </div>
+			    <div class="col-md-3">
+			        <img src="img/latest-media/4.jpg" alt="Lights" style="width:100%; height:auto;">
+	            	<h4><strong>Paris | 18 Apr, 2017</strong></h4>
+			        <h5>Conway to replace Duval for Paris ePrix</h5>
+			    </div>
+	        </div>
+	    </div>
+
+	    <div class="container latest-results">
+	    	<div class="top-buffer">
+	    		<h1>LATEST RESULTS</h1>
+	    	</div>
+	    	<div class="row bottom-buffer bg-warning" style="padding: 50px;">
+	          	<div class="col-md-4">
+	          		<div>
+	          			<div class="row bg-primary bottom-buffer">
+	          				<div class="col-md-4">
+								<h2>21</h2>
+								<h2>April</h2>
+							</div>
+	          				<div class="col-md-8">
+	          					<h4>Monaco ePrix</h4>
+	          					<h4>MEXICO CITY, MX</h4>
+	          					<h4>See Full Result</h4>
+	          				</div>
+	          			</div>
+	          			<div class="row bg-primary bottom-buffer">
+	          				<div class="col-md-4">
+								<h2>21</h2>
+								<h2>April</h2>
+							</div>
+	          				<div class="col-md-8">
+	          					<h4>Monaco ePrix</h4>
+	          					<h4>MEXICO CITY, MX</h4>
+	          					<h4>See Full Result</h4>
+	          				</div>
+	          			</div>
+	          			<div class="row bg-primary bottom-buffer">
+	          				<div class="col-md-4">
+								<h2>21</h2>
+								<h2>April</h2>
+							</div>
+	          				<div class="col-md-8">
+	          					<h4>Monaco ePrix</h4>
+	          					<h4>MEXICO CITY, MX</h4>
+	          					<h4>See Full Result</h4>
+	          				</div>
+	          			</div>
+	          			<div class="row">
+	          				<div class="col-md-6">
+	          					<button type="button" class="btn btn-block btn-primary">ALL RESULTS</button>
+	          				</div>
+	          				<div class="col-md-6">
+	          					<button type="button" class="btn btn-block btn-primary">ALL STANDINGS</button>
+	          				</div>
+	          			</div>
+	          		</div>
+			   		
+			    </div>
+		        <div class="col-md-8">
+			     	<div class="bg-danger">
+	          			<table class="table table-striped">
+						    <thead>
+						      <tr>
+						        <th>POS</th>
+						        <th></th>
+						        <th>DRIVER/TEAM</th>
+						        <th>GAP</th>
+						        <th>TEAM</th>
+						        <th>KPH/MPH</th>
+						        <th>LAP</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr>
+						        <td>1</td>
+						        <td>
+						        	<img src="img/buemi.png" style="height: 25px; width: 25px;">
+						        </td>
+						        <td>FERARRI</td>
+						        <td>-1.050</td>
+						        <td>56:62:210</td>
+						        <td>100.0/52.2</td>
+						        <td>45</td>
+						      </tr>
+						      <tr>
+						        <td>1</td>
+						        <td>
+						        	<img src="img/buemi.png" style="height: 25px; width: 25px;">
+						        </td>
+						        <td>FERARRI</td>
+						        <td>-1.050</td>
+						        <td>56:62:210</td>
+						        <td>100.0/52.2</td>
+						        <td>45</td>
+						      </tr>
+						      <tr>
+						        <td>1</td>
+						        <td>
+						        	<img src="img/buemi.png" style="height: 25px; width: 25px;">
+						        </td>
+						        <td>FERARRI</td>
+						        <td>-1.050</td>
+						        <td>56:62:210</td>
+						        <td>100.0/52.2</td>
+						        <td>45</td>
+						      </tr>
+						      <tr>
+						        <td>1</td>
+						        <td>
+						        	<img src="img/buemi.png" style="height: 25px; width: 25px;">
+						        </td>
+						        <td>FERARRI</td>
+						        <td>-1.050</td>
+						        <td>56:62:210</td>
+						        <td>100.0/52.2</td>
+						        <td>45</td>
+						      </tr>
+						      <tr>
+						        <td>1</td>
+						        <td>
+						        	<img src="img/buemi.png" style="height: 25px; width: 25px;">
+						        </td>
+						        <td>FERARRI</td>
+						        <td>-1.050</td>
+						        <td>56:62:210</td>
+						        <td>100.0/52.2</td>
+						        <td>45</td>
+						      </tr>
+						    </tbody>
+						  </table>
+	          		</div>
+			    </div>
+	        </div>
+	    </div>
+
+	    <div class="container-fluid">
+		    <footer>
+		        <p class="pull-right"><a href="#">Back to top</a></p>
+		        <p>&copy; 2017 Ivan Widyan, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+		    </footer>
+	    </div>
+    </div>
+
+    <script src="js/index.js" type="text/javascript" ></script>
+
+  </body>
+</html>

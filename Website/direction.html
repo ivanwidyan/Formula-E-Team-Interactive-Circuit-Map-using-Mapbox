@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Circuit des Invalides - Directions</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.css' rel='stylesheet' />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="css/direction.css" rel="stylesheet">
+</head>
+<body>
+	<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.js'></script>
+	<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.css' type='text/css' />
+
+	<div id=information-panel>
+		<h1>Information</h1>
+		<div id="inner-information-panel">
+			<h2><strong><em>Legends</em></strong></h2>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="media">
+					  	<div class="media-left media-middle">
+					    	<img src="icons/svgs/toilet-15.svg" class="media-object">
+					  	</div>
+					  	<div class="media-body">
+					    	<h4> TOILETTES</h4>
+					    	<p> <strong>TOILETS</strong></p>
+					  	</div>
+					</div>
+					<div class="media">
+					  	<div class="media-left media-middle">
+					    	<img src="icons/svgs/clothing-store-15.svg" class="media-object">
+					  	</div>
+					  	<div class="media-body">
+					    	<h4> BOUTIQUE</h4>
+					    	<p><strong>MERCHANDISE</strong></p>
+					 	</div>
+					</div>
+					<p>Lost and Found</p>
+					<p>Giant Screens</p>
+					<p>Ticket Booths</p>
+					<p>Race Suites</p>
+					<p>Grandstands</p>
+					<p>Emotion Viewing Platforms</p>
+					<p>Standing Spectator Areas</p>
+				</div>
+				<div class="col-sm-6">
+					<p>Gates</p>
+					<p>Merchandise</p>
+					<p>Information</p>
+					<p>Medical Centre</p>
+					<p>Shuttle Point</p>
+					<p>Electric Vehicles</p>
+					<p>Food & Beverages</p>
+				</div>
+			</div>
+		</div>	
+
+		<div id="inner-information-panel">
+			<p><strong>Access</strong></p>
+			<div class="row">
+				<div class="col-sm-6">
+					<p>Bridges</p>
+					<p>Recommended Route</p>
+				</div>
+				<div class="col-sm-6">
+					<p>Disabled Access</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="inner-information-panel">
+			<div id="panel-header">
+				<h3><strong><em>Programme - Samedi 23 Avril</em></strong></h3>
+			</div>
+			<table class="table">
+				<tbody>
+			      	<tr>
+				        <td class="text-left">08:15-09:00</td>
+				        <td class="text-left">ESSAIS NON QUALIFICATIFS 1</td>
+			      	</tr>
+			      	<tr>
+				        <td class="text-left">10:00</td>
+				        <td class="text-left"><strong>Tirage au sort groupes qualificatifs (eVillage)</strong></td>
+			      	</tr>
+			      	<tr>
+				        <td class="text-left">10:30-11:00</td>
+				        <td class="text-left">ESSAIS NON QUALIFICATIFS 2</td>
+			      	</tr>
+			      	<tr>
+				        <td class="text-left">12:00-12:06</td>
+				        <td class="text-left">ESSAIS QUALIFICATIFS - GROUPE 1</td>
+			      	</tr>
+			      	<tr>
+				        <td class="text-left">12:10-12:16</td>
+				        <td class="text-left">ESSAIS QUALIFICATIFS - GROUPE 2</td>
+			      	</tr>
+			      	<tr>
+				        <td class="text-left">12:20-12:26</td>
+				        <td class="text-left">ESSAIS QUALIFICATIFS - GROUPE 3</td>
+			      	</tr>
+			      	<tr>
+				        <td class="text-left">12:30-12:36</td>
+				        <td class="text-left">ESSAIS QUALIFICATIFS - GROUPE 4</td>
+			      	</tr>
+			      	<tr>
+				        <td class="text-left">12:45-13:00</td>
+				        <td class="text-left">SUPER POLE</td>
+			      	</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+	<div id='map'></div>
+
+	<script src="js/direction.js" type="text/javascript" ></script>
+
+</body>
+</html>

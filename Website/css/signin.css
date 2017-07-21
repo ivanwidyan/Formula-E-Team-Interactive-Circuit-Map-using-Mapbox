@@ -1,0 +1,129 @@
+html, body {
+	height: 100%;
+	vertical-align: middle;
+}
+
+body {
+  	background: linear-gradient(
+                     rgba(0,0,0, .5), 
+                     rgba(0,0,0, .5)),
+                     url('../img/signin-background2.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+
+
+.vertical-center {
+	min-height: 100%;
+  	min-height: 100vh;
+  	display: flex;
+  	align-items: center;
+}
+
+.panel-heading {
+	border: 0px;
+	background: linear-gradient(to bottom, #00c8ff 0%, #12566a 100%);
+}
+
+.panel-default {
+	background: rgba(0, 0, 0, 0.81) !important;
+	border: 0px;
+}
+
+.panel-body {
+	padding: 50px 100px;
+}
+
+.panel-body h2 {
+	background: -webkit-linear-gradient(top, #00c8ff, #12566a);
+	background: linear-gradient(top, #00c8ff, #12566a);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.panel-body .form-group > p {
+	color: #9B9B9B;
+	font-size: 10px;
+}
+
+.panel-body .panel-body-left .checkbox label > p {
+	color: #666;
+}
+
+.panel-body .panel-body-left input {
+	color: #fff;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 1px solid #8D8FA5;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+/* OUTLINE BUTTONS */
+.btn.outline {
+    background: none;
+    border-radius: 0;
+}
+.btn-primary.outline {
+    border: 2px solid #0099cc;
+    color: #0099cc;
+    background: -webkit-linear-gradient(top, #00c8ff, #12566a);
+	background: linear-gradient(top, #00c8ff, #12566a);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+    color: #33a6cc;
+    border-color: #33a6cc;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+    border-color: #007299;
+    color: #007299;
+    box-shadow: none;
+}
+
+/* RIGHT PANEL */
+.panel-body-right {
+    height: 100%;
+}
+
+.right-paragraph {
+    bottom: 0;
+    right: 0;
+    text-align: right;
+}
+
+.right-paragraph > p {
+	color: #fff;
+	font-size: 8px;
+}
+
+/* MODAL */
+.modal-header {
+	background-color: #fff;
+}
+
+.modal-backdrop
+{
+    opacity: 0.75 !important;
+}
+
+/*Placeholder Colors*/
+.form-control::-webkit-input-placeholder {
+	color:#333;
+}
+.form-control:-moz-placeholder { /* Firefox 18- */
+	color:#333;
+}
+ 
+.form-control::-moz-placeholder { /* Firefox 19+ */
+	color:#333;
+}
+ 
+.form-control:-ms-input-placeholder {
+	color:#333;
+}
