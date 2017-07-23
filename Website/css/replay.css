@@ -1,0 +1,45 @@
+body {
+  margin:0;
+  padding:0;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+p,h2,h4
+  {
+    margin: 0;
+  }
+
+/* BUTTON FULL GRADIENT
+-------------------------------------------------- */
+.btn-full-gradient {
+  color: #FFFFFF;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #12566A;
+  *background-color: #12566A;
+  background-image: -moz-linear-gradient(top, #00C8FF, #12566A);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#00C8FF), to(#12566A));
+  background-image: -webkit-linear-gradient(top, #00C8FF, #12566A);
+  background-image: -o-linear-gradient(top, #00C8FF, #12566A);
+  background-image: linear-gradient(to bottom, #00C8FF, #12566A);
+  background-repeat: repeat-x;
+  border-color: #12566A;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00C8FF', endColorstr='#12566A', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-full-gradient:hover,
+.btn-full-gradient:focus,
+.btn-full-gradient:active,
+.btn-full-gradient.active,
+.btn-full-gradient.disabled,
+.btn-full-gradient[disabled] {
+  color: #FFFFFF;
+  background-color: #12566A;
+  *background-color: #003bb3;
+}

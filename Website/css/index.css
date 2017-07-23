@@ -151,11 +151,25 @@ section > .inner-section h2, h3, h5 {
 /* LATEST RESULT
 -------------------------------------------------- */
 
-.latest-results h1, h4, h6 {
+.circle {
+  border: 3px solid #FFF;
+  border-radius: 18px;
+  box-shadow: 0 0 2px #888;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  padding-top: 2px;
+}
+
+.latest-results h1 {
   color: #FFF;
 }
 
-.latest-results h5 {
+.latest-results .date-place h4, h6 {
+  color: #FFF;
+}
+
+.latest-results .date-place h5 {
   color: #AAA;
 }
 
@@ -166,6 +180,23 @@ section > .inner-section h2, h3, h5 {
 .latest-results .date-place {
   background-color: #333;
   padding: 15px 25px;
+}
+
+.racer-panel > table > tbody > tr > td {
+  vertical-align: middle;
+}
+
+.racer-panel td > h5,  td > h6 {
+  margin: 0;
+  vertical-align: middle;
+}
+
+.racer-panel h5 {
+  color: #FFF;
+}
+
+.racer-panel h6 {
+  color: #AAA;
 }
 
 .latest-results hr {

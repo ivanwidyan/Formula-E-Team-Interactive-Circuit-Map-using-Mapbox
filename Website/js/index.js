@@ -84,6 +84,7 @@ $('#map').affix({
         top: function () {
             var navOuterHeight = $("#myCarousel").height();
             return this.top = navOuterHeight;
+            // return (this.top = $("#myCarousel").outerHeight(true));
         },
         bottom: function () {
             return (this.bottom = $("#belowMap").outerHeight(true));
