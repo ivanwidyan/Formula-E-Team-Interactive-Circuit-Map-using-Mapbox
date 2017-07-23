@@ -10,37 +10,50 @@ html, body {
 	margin-left:25%
 }
 
+.text-gradient {
+  background: -webkit-linear-gradient(left, #00c8ff, #12566a);
+  background: linear-gradient(left, #00c8ff, #12566a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /*INFORMATION PANEL*/
-#information-panel > h1, h2, h3, h4, p {
+#information-panel > h1, h2, h4, p {
 	margin: 0;
 }
 
+#information-panel > h3 {
+	margin-top: 0;
+	color: #AAA;
+}
+
 #information-panel > h1 {
-	color: #fff;
 	padding-bottom: 10px;
 }
 
 #information-panel h2 {
+	padding-top: 0;
+	margin-top: 0; 
 	margin-bottom: 10px;
 }
 
 #inner-information-panel .media .media-body > h4 {
-	font-size: 15px;
-}
-
-#inner-information-panel .media .media-body > p {
-	color: #82CACC;
+	color: #FFF;
 	font-size: 10px;
 }
 
+#inner-information-panel .media .media-body > p {
+	font-size: 8px;
+}
+
 #inner-information-panel .media .media-object {
-	height: 25px;
+	height: 20px;
 }
 
 #inner-information-panel > .table td {
-	color: #015B7E;
-	font-size: 12px;
-	border-bottom: 2px solid #015B7E;
+	color: #FFF;
+	font-size: 10px;
+	border-bottom: 10px solid #222;
 	border-top: 0px;
 }
 
@@ -48,26 +61,19 @@ html, body {
 	border-color: #fff;
 }
 
-#inner-information-panel > #panel-header {
-	background-color: #015B7E;
-	padding: 5px; 
-}
-
-#inner-information-panel > #panel-header > h3 {
-	color: #FFF;
+#inner-information-panel > .table tr {
+	background-color: #333;
 }
 
 #information-panel {
 	height: 100%;
 	bottom: 0;
 	width: 25%;
-	background-color: #015B7E;
+	background-color: #222;
 	padding: 10px;
 	overflow-y: scroll;
 }
 
 #information-panel #inner-information-panel {
-	background-color: #fff;
-	margin-bottom: 10px;
-	padding: 10px;
+	padding: 0px 10px;
 }

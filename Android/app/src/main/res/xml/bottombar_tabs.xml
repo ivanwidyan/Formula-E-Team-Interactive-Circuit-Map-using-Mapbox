@@ -1,0 +1,32 @@
+<tabs>
+    <tab
+        id="@+id/tab_recent"
+        icon="@drawable/ic_history"
+        inActiveColor="#D3D3D3"
+        activeColor="#019DCB"
+        title="Recent" />
+    <tab
+        id="@+id/tab_race"
+        icon="@drawable/ic_races"
+        inActiveColor="#D3D3D3"
+        activeColor="#019DCB"
+        title="Race" />
+    <tab
+        id="@+id/tab_driver"
+        icon="@drawable/ic_driver"
+        inActiveColor="#D3D3D3"
+        activeColor="#019DCB"
+        title="Driver" />
+    <tab
+        id="@+id/tab_video"
+        icon="@drawable/ic_video"
+        inActiveColor="#D3D3D3"
+        activeColor="#019DCB"
+        title="Video" />
+    <tab
+        id="@+id/tab_profile"
+        icon="@drawable/ic_person"
+        inActiveColor="#D3D3D3"
+        activeColor="#019DCB"
+        title="Profile" />
+</tabs>

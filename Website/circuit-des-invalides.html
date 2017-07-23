@@ -13,64 +13,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link href="css/direction2.css" rel="stylesheet">
+    <link href="css/direction.css" rel="stylesheet">
 </head>
 <body>
 	<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.js'></script>
 	<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.css' type='text/css' />
 
 	<div id=information-panel>
-		<h1>Information</h1>
+		<h2 class="text-gradient text-uppercase">Programmee Samedi 23 Avril</h2>
 		<div id="inner-information-panel">
-			<h2><strong><em>Legends</em></strong></h2>
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="media">
-					  	<div class="media-left media-middle">
-					    	<img src="icons/svgs/toilet-15.svg" class="media-object">
-					  	</div>
-					  	<div class="media-body">
-					    	<h4> TOILETTES</h4>
-					    	<p> <strong>TOILETS</strong></p>
-					  	</div>
-					</div>
-					<div class="media">
-					  	<div class="media-left media-middle">
-					    	<img src="icons/svgs/clothing-store-15.svg" class="media-object">
-					  	</div>
-					  	<div class="media-body">
-					    	<h4> BOUTIQUE</h4>
-					    	<p><strong>MERCHANDISE</strong></p>
-					 	</div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<div class="media">
-					  	<div class="media-left media-middle">
-					    	<img src="icons/svgs/hospital-15.svg" class="media-object">
-					  	</div>
-					  	<div class="media-body">
-					    	<h4> CENTRE MEDICAL</h4>
-					    	<p> <strong>MEDICAL CENTRE</strong></p>
-					  	</div>
-					</div>
-					<div class="media">
-					  	<div class="media-left media-middle">
-					    	<img src="icons/svgs/restaurant-15.svg" class="media-object">
-					  	</div>
-					  	<div class="media-body">
-					    	<h4> POINTS DE RESTAURATION</h4>
-					    	<p><strong>FOOD & BEVERAGES</strong></p>
-					 	</div>
-					</div>
-				</div>
-			</div>
-		</div>	
-
-		<div id="inner-information-panel">
-			<div id="panel-header">
-				<h3><strong><em>Programme - Samedi 23 Avril</em></strong></h3>
-			</div>
 			<table class="table">
 				<tbody>
 			      	<tr>
@@ -78,8 +29,8 @@
 				        <td class="text-left">ESSAIS NON QUALIFICATIFS 1</td>
 			      	</tr>
 			      	<tr>
-				        <td class="text-left">10:00</td>
-				        <td class="text-left"><strong>Tirage au sort groupes qualificatifs (eVillage)</strong></td>
+				        <td class="text-left text-gradient"><strong>10:00</strong></td>
+				        <td class="text-left text-gradient"><strong>Tirage au sort groupes qualificatifs (eVillage)</strong></td>
 			      	</tr>
 			      	<tr>
 				        <td class="text-left">10:30-11:00</td>
@@ -108,6 +59,52 @@
 				</tbody>
 			</table>
 		</div>
+
+		<h3>LEGENDS</h2>
+		<div id="inner-information-panel">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="media">
+					  	<div class="media-left media-middle">
+					    	<img src="icons/svgs/toilet-15.svg" class="media-object">
+					  	</div>
+					  	<div class="media-body">
+					    	<h4> TOILETTES</h4>
+					    	<p class="text-gradient"> <strong>TOILETS</strong></p>
+					  	</div>
+					</div>
+					<div class="media">
+					  	<div class="media-left media-middle">
+					    	<img src="icons/svgs/clothing-store-15.svg" class="media-object">
+					  	</div>
+					  	<div class="media-body">
+					    	<h4> BOUTIQUE</h4>
+					    	<p class="text-gradient"><strong>MERCHANDISE</strong></p>
+					 	</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="media">
+					  	<div class="media-left media-middle">
+					    	<img src="icons/svgs/hospital-15.svg" class="media-object">
+					  	</div>
+					  	<div class="media-body">
+					    	<h4> CENTRE MEDICAL</h4>
+					    	<p class="text-gradient"> <strong>MEDICAL CENTRE</strong></p>
+					  	</div>
+					</div>
+					<div class="media">
+					  	<div class="media-left media-middle">
+					    	<img src="icons/svgs/restaurant-15.svg" class="media-object">
+					  	</div>
+					  	<div class="media-body">
+					    	<h4> POINTS DE RESTAURATION</h4>
+					    	<p class="text-gradient"><strong>FOOD & BEVERAGES</strong></p>
+					 	</div>
+					</div>
+				</div>
+			</div>
+		</div>	
 
 	</div>
 	<div id='map'></div>

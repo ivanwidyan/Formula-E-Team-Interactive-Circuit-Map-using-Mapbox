@@ -1,13 +1,15 @@
 (function() {
  	// Initializae Firebase
  	const config = {
-	    apiKey: "AIzaSyCRoNH6xszGFW6eVacQX8qE8NOP9ErwavY",
-	    authDomain: "data-visualization-system.firebaseapp.com",
-	    databaseURL: "https://data-visualization-system.firebaseio.com",
-	    storageBucket: "data-visualization-system.appspot.com",
-	    messagingSenderId: "40626504608"
-	};
-	firebase.initializeApp(config);
+        apiKey: "AIzaSyBcWs5UYSvsm3qFxkofIcHY4p7bDmIJD4g",
+        authDomain: "formula-e-60d84.firebaseapp.com",
+        databaseURL: "https://formula-e-60d84.firebaseio.com",
+        projectId: "formula-e-60d84",
+        storageBucket: "formula-e-60d84.appspot.com",
+        messagingSenderId: "218918819433"
+    };
+
+	   firebase.initializeApp(config);
 
   	// Login Elements
   	const txtEmail = document.getElementById('txtEmail');

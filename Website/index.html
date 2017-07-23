@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Formula E</title>
+
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -17,6 +20,7 @@
   </head>
 
   <body>
+  	<script src="js/index-firebase.js" type="text/javascript"></script>
     <div class="navbar-wrapper">
       	<div class="container">
        		<nav class="navbar-default navbar-static-top">
@@ -78,7 +82,15 @@
 	                  	</ul>
 	                </li>
 	                <li><a href="#contact">HOW TO WATCH</a></li>
+	                <li class="dropdown">
+	                  	<a href="#" id="account-name" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT <span class="caret"></span></a>
+	                  	<ul class="dropdown-menu">
+		                    <li><a href="signin.html" id="btnLogin">LOGIN</a></li>
+		                    <li><a href="#" id="btnLogout">LOGOUT</a></li>
+	                  	</ul>
+	                </li>
 	            </ul>
+	            <!-- Top Menu Items -->
             </div>
           </div>
         </nav>
@@ -94,37 +106,37 @@
       </ol>
       <div class="carousel-inner" role="listbox">
 	    <div class="item active">
-		    <div class="carousel-image" style="background-image: url(http://d3iyn1f5w83nva.cloudfront.net/media/305343/paris-story-launch.jpg?anchor=center&mode=crop&quality=80&width=1980&rnd=131362872400000000)">
+		    <div class="carousel-image" style="background-image: url(http://d3iyn1f5w83nva.cloudfront.net/media/306274/nyccrop.jpg?anchor=center&mode=crop&quality=80&width=1277&rnd=131449498100000000)">
 		    </div>
         	<div class="container">
 	            <div class="carousel-caption">
 	            	<div class="date-place">
-		            	<h5>Paris | 10 April, 2017</h5>
+		            	<h5>New York, USA | 19 Jul, 2017</h5>
 	            	</div>
-	              	<h1>Ticket now on sale for Paris ePrix</h1>
+	              	<h1>New York races 'a resounding success</h1>
 	            </div>
           	</div>
           	<a href="http://www.fiaformulae.com/en/news/2017/april/tickets-now-on-sale-for-paris-eprix/"><span></span></a>
 	    </div>
         <div class="item">
-        	<div class="carousel-image" style="background-image: url(http://d3iyn1f5w83nva.cloudfront.net/media/305335/1-_56i7110.jpg?anchor=center&mode=crop&quality=80&width=2560&rnd=131360320730000000" alt="Second slide"></div>
+        	<div class="carousel-image" style="background-image: url(http://d3iyn1f5w83nva.cloudfront.net/media/306311/hemsworthcrop.jpg?anchor=center&mode=crop&quality=80&width=1277&rnd=131451140490000000" alt="Second slide"></div>
         	<div class="container">
 	            <div class="carousel-caption">
 	            <div class="date-place">
-	            	<h5>Mexico City | 07 April, 2017</h5>
+	            	<h5>New York City | 21 Jul, 2017</h5>
             	</div>
-	              	<h1>Abt proud of Mexico win</h1>
+	              	<h1>Chris Hemsworth: “It was good fun”</h1>
 	            </div>
           	</div>
         </div>
         <div class="item">
-        	<div class="carousel-image" style="background-image: url(http://d3iyn1f5w83nva.cloudfront.net/media/305269/_56i4857.jpg?width=2560" alt="Third slide)"></div>
+        	<div class="carousel-image" style="background-image: url(http://d3iyn1f5w83nva.cloudfront.net/media/306239/birdbackdrop.jpg?anchor=center&mode=crop&quality=80&width=1277&rnd=131447127020000000" alt="Third slide)"></div>
         	<div class="container">
 	            <div class="carousel-caption">
 	            	<div class="date-place">
-		            	<h5>Mexico City | 01 April, 2017</h5>
+		            	<h5>New York, USA | 16 Jul, 2017</h5>
 	            	</div>
-	              	<h1>Top Shots: Julius Baer Mexico City ePrix</h1>
+	              	<h1>Bird flies high with New York double</h1>
 	            </div>
           	</div>
         </div>
@@ -145,7 +157,7 @@
 	    	<div class="inner-section">
 	    		<h2>R5 | 13 MAY 2017</h2>
 	    		<h3><img height="25px" width="auto" src="http://www.fiaformulae.com/img/flags/mc.svg"> MONACO, MC</h3>
-	    		<h4>Circuit of Monaco - Monaco ePrix</h4>
+	    		<h4 class="text-gradient text-uppercase">Circuit of Monaco - Monaco ePrix</h4>
 	    		<table class="table">
 				    <tbody>
 				      	<tr>
@@ -173,16 +185,15 @@
 						<h5>TURNS</h5>
 					</div>
 				</div>
-				<a href="signin.html" class="btn btn-primary btn-lg btn-block">
-			      	<span class="glyphicon glyphicon-credit-card"></span> BUY TICKETS 
-			    </a>
+				<a href="signin.html" class="btnBfrLgn btn btn-full-gradient btn-lg btn-block">BUY TICKET</a>
+				<a href="circuit-des-invalides.html" class="btnAftrLgn btn btn-full-gradient btn-lg btn-block disabled">COMING SOON</a>
 	    	</div>
 	    </section>
 	    <section id='paris'>
 	        <div class="inner-section">
 	    		<h2>R6 | 20 MAY 2017</h2>
 	    		<h3><img height="25px" width="auto" src="http://www.fiaformulae.com/img/flags/fr.svg"> PARIS, FR</h3>
-	    		<h4>Circuit des Invalides - Paris ePrix</h4>
+	    		<h4 class="text-gradient text-uppercase">Circuit des Invalides - Paris ePrix</h4>
 	    		<table class="table">
 				    <tbody>
 				      	<tr>
@@ -209,16 +220,15 @@
 						<h5>TURNS</h5>
 					</div>
 				</div>
-				<a href="signin.html" class="btn btn-primary btn-lg btn-block">
-			      	<span class="glyphicon glyphicon-credit-card"></span> BUY TICKETS 
-			    </a>
+				<a href="signin.html" class="btnBfrLgn btn btn-full-gradient btn-lg btn-block">BUY TICKET</a>
+				<a href="circuit-des-invalides.html" class="btnAftrLgn btn btn-full-gradient btn-lg btn-block">CIRCUIT NAVIGATION</a>
 	    	</div>
 	    </section>
 	    <section id='berlin'>
 	        <div class="inner-section">
 	    		<h2>R7 | 10 JUNE 2017</h2>
 	    		<h3><img height="25px" width="auto" src="http://www.fiaformulae.com/img/flags/de.svg"> BERLIN, DE</h3>
-	    		<h4>Circuit of Berlin - Berlin ePrix</h4>
+	    		<h4 class="text-gradient text-uppercase">Circuit of Berlin - Berlin ePrix</h4>
 	    		<table class="table">
 				    <tbody>
 				      	<tr>
@@ -245,9 +255,8 @@
 						<h5>TURNS</h5>
 					</div>
 				</div>
-				<a href="signin.html" class="btn btn-primary btn-lg btn-block">
-			      	<span class="glyphicon glyphicon-credit-card"></span> BUY TICKETS 
-			    </a>
+				<a href="signin.html" class="btnBfrLgn btn btn-full-gradient btn-lg btn-block">BUY TICKET</a>
+				<a href="circuit-des-invalides.html" class="btnAftrLgn btn btn-full-gradient btn-lg btn-block disabled">COMING SOON</a>
 	    	</div>
 	    </section>
 	</div>
@@ -255,87 +264,99 @@
 	<div id="belowMap">
 
 		<div class="container latest-media">
-	    	<div class="top-buffer">
-	    		<h1>LATEST MEDIA</h1>
+	    	<div class="top-buffer bottom-buffer">
+	    		<h1 style="text-align: right;">LATEST MEDIA</h1>
 	    	</div>
-	    	<div class="row top-buffer bottom-buffer">
+	    	<div class="row bottom-buffer">
 	          	<div class="col-md-3">
 	          		<img src="img/latest-media/1.jpg" alt="Lights" style="width:100%; height:auto;">
-	          		<h4><strong>19Apr, 2017</strong></h4>
-	          		<h2>460bhp Formula E-Engined Hot Hatch! Renault ZOE e-Sport</h2>
+	          		<h4 class="text-uppercase">Chris Hemsworth: “It was good fun”</h4>
+		            <h5 class="text-gradient"><strong>NEW YORK CITY | 21 JUL, 2017</strong></h4>
+			        <h5>Hollywood super star Chris Hemsworth quite literally took the Formula E car for a spin during...</h5>
+			        <h6>SHOW MORE</h6>
 			    </div>
 		        <div class="col-md-3">
 			        <img src="img/latest-media/2.jpg" alt="Lights" style="width:100%; height:auto;">
-		            <h4><strong>London, UK | 19Apr, 2017</strong></h4>
-			        <h2>Insight: Williams'updated battery</h2>
+		            <h4 class="text-uppercase">30+ Overtakes Compilation! </h4>
+		            <h5 class="text-gradient"><strong>LONDON | 21 JUL, 2017</strong></h4>
+			        <h5>Formula's inaugural trip to New York City gave us plenty of action and competitive racing...</h5>
+			        <h6>SHOW MORE</h6>
 			    </div>
 		        <div class="col-md-3">
 			        <img src="img/latest-media/3.jpg" alt="Lights" style="width:100%; height:auto;">
-		            <h4><strong>Paris | 19Apr, 2017</strong></h4>
-			        <h2>From dream to reality: Formula E was born in Paris</h2>
+		            <h4 class="text-uppercase">Two Poles, Two Wins, Much Drama!</h4>
+		            <h5 class="text-gradient"><strong>LONDON | 21 JUL, 2017</strong></h4>
+			        <h5>Enjoy highlights from DS Virgin Racing's thrilling weekend, from rookie Alex Lynn's shock pole...</h5>
+			        <h6>SHOW MORE</h6>
 			    </div>
 			    <div class="col-md-3">
 			        <img src="img/latest-media/4.jpg" alt="Lights" style="width:100%; height:auto;">
-	            	<h4><strong>Paris | 18 Apr, 2017</strong></h4>
-			        <h5>Conway to replace Duval for Paris ePrix</h5>
+	            	<h4 class="text-uppercase">Rewind: Formula E’s nail-biting deciders</h4>
+		            <h5 class="text-gradient"><strong>LONDON | 21 JUL, 2017</strong></h4>
+			        <h5>The Season 3 Formula E champion will be crowned next weekend in Montreal. One of Sebastien Buemi...</h5>
+			        <h6>SHOW MORE</h6>
+			        
 			    </div>
 	        </div>
 	    </div>
 
 	    <div class="container latest-results">
 	    	<div class="top-buffer">
-	    		<h1>LATEST RESULTS</h1>
+	    		<h1 style="text-align: right;">LATEST RESULTS</h1>
 	    	</div>
-	    	<div class="row bottom-buffer bg-warning" style="padding: 50px;">
+	    	<div class="row bottom-buffer panel" style="padding: 50px;">
 	          	<div class="col-md-4">
 	          		<div>
-	          			<div class="row bg-primary bottom-buffer">
-	          				<div class="col-md-4">
-								<h2>21</h2>
-								<h2>April</h2>
+	          			<div class="row bottom-buffer date-place">
+	          				<div class="col-md-4 date"">
+								<h1>21</h1>
+								<h2 class="text-gradient">APR</h2>
+								<h4 class="background-gradient">R1</h4>
 							</div>
 	          				<div class="col-md-8">
-	          					<h4>Monaco ePrix</h4>
-	          					<h4>MEXICO CITY, MX</h4>
-	          					<h4>See Full Result</h4>
+	          					<h5>Monaco ePrix</h5>
+	          					<h4>MEXICO CITY, MX</h4><hr>
+	          					<h6>SEE FULL RESULT</h6>
+	          				</div>	
+	          			</div>
+	          			<div class="row bottom-buffer date-place">
+	          				<div class="col-md-4 date">
+								<h1>21</h1>
+								<h2 class="text-gradient">APR</h2>
+								<h4 class="background-gradient">R1</h4>
+							</div>
+	          				<div class="col-md-8">
+	          					<h5>Monaco ePrix</h5>
+	          					<h4>MEXICO CITY, MX</h4><hr>
+	          					<h6>SEE FULL RESULT</h6>
 	          				</div>
 	          			</div>
-	          			<div class="row bg-primary bottom-buffer">
-	          				<div class="col-md-4">
-								<h2>21</h2>
-								<h2>April</h2>
+	          			<div class="row bottom-buffer date-place">
+	          				<div class="col-md-4 date">
+								<h1>21</h1>
+								<h2 class="text-gradient">APR</h2>
+								<h4 class="background-gradient">R1</h4>
 							</div>
 	          				<div class="col-md-8">
-	          					<h4>Monaco ePrix</h4>
-	          					<h4>MEXICO CITY, MX</h4>
-	          					<h4>See Full Result</h4>
-	          				</div>
-	          			</div>
-	          			<div class="row bg-primary bottom-buffer">
-	          				<div class="col-md-4">
-								<h2>21</h2>
-								<h2>April</h2>
-							</div>
-	          				<div class="col-md-8">
-	          					<h4>Monaco ePrix</h4>
-	          					<h4>MEXICO CITY, MX</h4>
-	          					<h4>See Full Result</h4>
+	          					<h5>Monaco ePrix</h5>
+	          					<h4>MEXICO CITY, MX</h4><hr>
+	          					<h6>SEE FULL RESULT</h6>
 	          				</div>
 	          			</div>
 	          			<div class="row">
 	          				<div class="col-md-6">
-	          					<button type="button" class="btn btn-block btn-primary">ALL RESULTS</button>
+	          					<button type="button" class="btn btn-block btn-primary outline btn-sm">ALL RESULTS</button>
 	          				</div>
 	          				<div class="col-md-6">
-	          					<button type="button" class="btn btn-block btn-primary">ALL STANDINGS</button>
+	          					<button type="button" class="btn btn-block btn-primary outline btn-sm">ALL STANDINGS</button>
 	          				</div>
 	          			</div>
 	          		</div>
 			   		
 			    </div>
 		        <div class="col-md-8">
-			     	<div class="bg-danger">
-	          			<table class="table table-striped">
+			     	<div class="racer-panel">
+	          			<table class="table table-striped table-borderless">
 						    <thead>
 						      <tr>
 						        <th>POS</th>
@@ -392,17 +413,6 @@
 						        <td>100.0/52.2</td>
 						        <td>45</td>
 						      </tr>
-						      <tr>
-						        <td>1</td>
-						        <td>
-						        	<img src="img/buemi.png" style="height: 25px; width: 25px;">
-						        </td>
-						        <td>FERARRI</td>
-						        <td>-1.050</td>
-						        <td>56:62:210</td>
-						        <td>100.0/52.2</td>
-						        <td>45</td>
-						      </tr>
 						    </tbody>
 						  </table>
 	          		</div>
@@ -413,7 +423,7 @@
 	    <div class="container-fluid">
 		    <footer>
 		        <p class="pull-right"><a href="#">Back to top</a></p>
-		        <p>&copy; 2017 Ivan Widyan, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+		        <p>&copy; 2017 Formula E Team, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
 		    </footer>
 	    </div>
     </div>

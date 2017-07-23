@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#019DCB</color>
+    <color name="colorPrimaryDark">#017292</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="Dark_Ebony">#292C33</color>
+    <color name="Ebony">#2D3039</color>
+    <color name="F1_Blue">#019DCB</color>
+    <color name="Dodger_Blue">#1E90FF</color>
+    <color name="Dodger_Blue_Small">#0986FF</color>
+    <color name="Dodger_Blue_Medium">#49A6FF</color>
+    <color name="Yellow">#FFFF00</color>
+    <color name="BlackBG">#252525</color>
+    <color name="BlackFR">#19171A</color>
+    <color name="DarkGray">#252525</color>
+    <color name="Gray">#757575</color>
+    <color name="GreenGoblin">#619885</color>
+    <color name="Vulcan">#353942</color>
+    <color name="Licorice">#343844</color>
+    <color name="colorAccentNew">#BFC2C1</color>
+</resources>

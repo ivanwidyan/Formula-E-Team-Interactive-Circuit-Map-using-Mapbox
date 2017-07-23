@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Formula E</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="facebook_app_id">1887227744869668</string>
+    <string name="access_token">pk.eyJ1IjoiaXZhbndpZHlhbiIsImEiOiJjaXpvNmx6OXQwMDE0MnFucTJhODNzcnJzIn0.17aFDly4h5iOl-o_21e4yw</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_testing">TestingActivity</string>
+</resources>

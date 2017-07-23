@@ -6,6 +6,17 @@ html, body {
   color: #5a5a5a;
 }
 
+body {
+    background: linear-gradient(
+                     rgba(0,0,0, .75), 
+                     rgba(0,0,0, .75)),
+                     url('../img/index-background.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
 /* MAPBOX STUFF
 -------------------------------------------------- */
 #map {
@@ -17,18 +28,17 @@ html, body {
     width: 50%;
     margin-left: 50%;
     font-family: sans-serif;
-    background-color: #5a5a5a;
+    background: rgba(0, 0, 0, 0.5) !important;
 }
 
 section {
     height: 100%;
-    border-bottom: 1px solid #5a5a5a;
+    border-bottom: 0px solid #5a5a5a;
     opacity: 1;
     font-size: 13px;
 }
 
 section .inner-section {
-  background-color: #252525;
   padding: 20%;
   text-align: center;
   vertical-align: middle;
@@ -40,10 +50,6 @@ section .inner-section {
 
 section > .inner-section h2, h3, h5 {
   color: #EAEAEA
-}
-
-section > .inner-section > h4 {
-  color: #80E6BF
 }
 
 .inner-section > .table td {
@@ -63,6 +69,139 @@ section > .inner-section > h4 {
 
 .affix-bottom {
   position: absolute;
+}
+
+/* BACKGROUND GRADIENT
+-------------------------------------------------- */
+.background-gradient {
+  background: linear-gradient(to bottom, #00c8ff 0%, #12566a 100%);
+}
+
+/* BUTTON FULL GRADIENT
+-------------------------------------------------- */
+.btn-full-gradient {
+  color: #FFFFFF;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #12566A;
+  *background-color: #12566A;
+  background-image: -moz-linear-gradient(top, #00C8FF, #12566A);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#00C8FF), to(#12566A));
+  background-image: -webkit-linear-gradient(top, #00C8FF, #12566A);
+  background-image: -o-linear-gradient(top, #00C8FF, #12566A);
+  background-image: linear-gradient(to bottom, #00C8FF, #12566A);
+  background-repeat: repeat-x;
+  border-color: #12566A;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00C8FF', endColorstr='#12566A', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-full-gradient:hover,
+.btn-full-gradient:focus,
+.btn-full-gradient:active,
+.btn-full-gradient.active,
+.btn-full-gradient.disabled,
+.btn-full-gradient[disabled] {
+  color: #FFFFFF;
+  background-color: #12566A;
+  *background-color: #003bb3;
+}
+
+/* OUTLINE BUTTONS
+-------------------------------------------------- */
+.btn.outline {
+    background: none;
+    border-radius: 0;
+}
+
+.btn-primary .outline {
+    border: 2px solid #0099cc;
+    color: #0099cc;
+    background: -webkit-linear-gradient(top, #00c8ff, #12566a);
+  background: linear-gradient(top, #00c8ff, #12566a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #fff;
+}
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+    color: #fff;
+    border-color: #33a6cc;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+    border-color: #fff;
+    color: #fff;
+    box-shadow: none;
+}
+
+/* LATEST MEDIA
+-------------------------------------------------- */
+.latest-media h1, h4, h6 {
+  color: #FFF;
+}
+
+.latest-media h5 {
+  color: #AAA;
+}
+
+.text-gradient {
+  background: -webkit-linear-gradient(top, #00c8ff, #12566a);
+  background: linear-gradient(top, #00c8ff, #12566a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* LATEST RESULT
+-------------------------------------------------- */
+
+.latest-results h1, h4, h6 {
+  color: #FFF;
+}
+
+.latest-results h5 {
+  color: #AAA;
+}
+
+.latest-results .date {
+  text-align: center;
+}
+
+.latest-results .date-place {
+  background-color: #333;
+  padding: 15px 25px;
+}
+
+.latest-results hr {
+  width: 50%;
+  margin: 0;
+}
+
+.latest-results .date h1{
+  margin-top: 10px; margin-bottom: 0; color: #FFF
+}
+
+.latest-results .date h2{
+  margin-top: 0;
+}
+
+.latest-results .date h4{
+  margin: 10px 10px; padding: 5px; position: absolute; left: -50%; top: 10%;
+}
+
+.latest-results .panel {
+  background-color: rgba(0, 0, 0, 0.5)!important;
+}
+
+.latest-results .racer-panel {
+  height: 100%;
+  bottom: 0;
+  color: #FFF;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: #333 !important;
+}
+
+.table-borderless td,
+.table-borderless th {
+    border: 0 !important;
 }
 
 /* CUSTOMIZE THE NAVBAR
@@ -93,7 +232,7 @@ section > .inner-section > h4 {
 }
 
 .navbar-default {
-  background-color: #222222;
+  background: rgba(0, 0, 0, 0.75) !important;
   border-color: #000000;
 }
 .navbar-default .navbar-brand {
@@ -217,18 +356,18 @@ section > .inner-section > h4 {
   position: relative;
   width: 100px;
   height: 8px;
-  background-color: #099FB8;
+  background: linear-gradient(to bottom, #00c8ff 0%, #12566a 100%);
   border-radius: 0;
   border-width: 0;
 }
 
 .carousel-caption {
   z-index: 10;
-  background: rgba(0, 0, 0, 0.6) !important;
+  background: rgba(0, 0, 0, 0.75) !important;
 }
 
 .carousel-caption .date-place {
-  background-color: #099FB8;
+  background: linear-gradient(to bottom, #00c8ff 0%, #12566a 100%);
   padding: 5px 25px;
   display: inline-block;
   left: 0;
@@ -264,13 +403,6 @@ section > .inner-section > h4 {
     left: 0;
 
     z-index: 1;
-}
-
-/* LATEST MEDIA
--------------------------------------------------- */
-.latest-media {
-  align-content: middle;
-  background-color: #F0F0F0;
 }
 
 /* RESPONSIVE CSS
@@ -312,9 +444,22 @@ section > .inner-section > h4 {
 /* ADDITIONAL
 -------------------------------------------------- */
 .top-buffer {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .bottom-buffer {
   margin-bottom: 25px;
+}
+
+/* VISIBILITY
+-------------------------------------------------- */
+.show {
+  display: block !important;
+}
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+.invisible {
+  visibility: hidden;
 }

@@ -1,3 +1,66 @@
+(function() {
+    // Initializae Firebase
+    const config = {
+        apiKey: "AIzaSyBcWs5UYSvsm3qFxkofIcHY4p7bDmIJD4g",
+        authDomain: "formula-e-60d84.firebaseapp.com",
+        databaseURL: "https://formula-e-60d84.firebaseio.com",
+        projectId: "formula-e-60d84",
+        storageBucket: "formula-e-60d84.appspot.com",
+        messagingSenderId: "218918819433"
+    };
+    firebase.initializeApp(config);
+
+  // LOGOUT ELEMENTS
+  const btnLogout = document.getElementById('btnLogout');
+  const btnLogin = document.getElementById('btnLogin');
+  btnLogout.addEventListener('click', e => {
+    firebase.auth().signOut().then(function() {
+      window.location.href = 'index.html';
+    }).catch(function(error) {
+      // If there's an error 
+    });
+  });
+
+  // USER INFORMATIONS
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log('user');
+      // User is signed in.
+      const displayName = user.displayName;
+      const email = user.email;
+      const emailVerified = user.emailVerified;
+      const photoURL = user.photoURL;
+      const uid = user.uid;
+      const providerData = user.providerData;
+      user.getToken().then(function(accessToken) {
+        JSON.stringify({
+          displayName: displayName,
+          email: email,
+          emailVerified: emailVerified,
+          photoURL: photoURL,
+          uid: uid,
+          accessToken: accessToken,
+          providerData: providerData
+        }, null, '  ');
+      });
+        document.getElementById('account-name').innerHTML = email;
+        btnLogin.classList.add("hidden");
+        btnLogout.classList.remove("hidden");
+        $('.btnBfrLgn').hide();
+        $('.btnAftrLgn').show();
+
+    } else {
+        console.log('no user');
+        btnLogout.classList.add("hidden");
+        btnLogin.classList.remove("hidden");
+        $('.btnBfrLgn').show();
+        $('.btnAftrLgn').hide();
+    }
+  }, function(error) {
+    console.log(error);
+  });
+}());
+
 $(function(){
     $(".dropdown").hover(            
         function() {
