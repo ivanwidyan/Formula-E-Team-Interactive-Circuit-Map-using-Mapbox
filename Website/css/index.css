@@ -174,7 +174,7 @@ section > .inner-section h2, h3, h5 {
   top: 15px;
 }
 
-.latest-standings .player-circle {
+.latest-standings .player-circle-small {
   margin: auto;
   border-top: 3px solid #00c8ff;
   border-bottom: 3px solid #12566a;
@@ -184,6 +184,34 @@ section > .inner-section h2, h3, h5 {
   box-shadow: 0 0 2px #888;
   height: 80px;
   width: 80px;
+  text-align: center;
+  color: #FFF;
+}
+
+.latest-standings .player-circle-medium {
+  margin: auto;
+  border-top: 3px solid #00c8ff;
+  border-bottom: 3px solid #12566a;
+  border-left: 3px solid #098FB5;
+  border-right: 3px solid #098FB5;
+  border-radius: 115px;
+  box-shadow: 0 0 2px #888;
+  height: 115px;
+  width: 115px;
+  text-align: center;
+  color: #FFF;
+}
+
+.latest-standings .player-circle-large {
+  margin: auto;
+  border-top: 3px solid #00c8ff;
+  border-bottom: 3px solid #12566a;
+  border-left: 3px solid #098FB5;
+  border-right: 3px solid #098FB5;
+  border-radius: 150px;
+  box-shadow: 0 0 2px #888;
+  height: 150px;
+  width: 150px;
   text-align: center;
   color: #FFF;
 }
