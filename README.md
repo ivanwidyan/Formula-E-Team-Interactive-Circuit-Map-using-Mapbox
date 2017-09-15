@@ -45,7 +45,7 @@ This application is built on:
 6. Click the profile to log in if you haven't logged in yet to see the account information.
 7. There are some important informations in the application which integrated using firebase database.
 
-## Demo*
+## Demo
 Web application demo is hosted at [http://ivanwidyan.com/formula-e](http://ivanwidyan.com/formula-e)
 
 ## Implemented Feature
