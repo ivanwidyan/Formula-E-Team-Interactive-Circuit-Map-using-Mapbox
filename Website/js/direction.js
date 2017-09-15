@@ -1,3 +1,4 @@
+// CUSTOM DIRECTION LINE
 var style = [{
   'id': 'directions-route-line-alt',
   'type': 'line',
@@ -150,8 +151,9 @@ var style = [{
   ]
 }];
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbndpZHlhbiIsImEiOiJjaXpvNmx6OXQwMDE0MnFucTJhODNzcnJzIn0.17aFDly4h5iOl-o_21e4yw';
 
+// MAPBOX INITIALIZATION
+mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbndpZHlhbiIsImEiOiJjaXpvNmx6OXQwMDE0MnFucTJhODNzcnJzIn0.17aFDly4h5iOl-o_21e4yw';
 var layerIDs = ['restaurant', 'toilet', 'hospital', 'seat', 'merchandise', 'stand'];
 var filterInput = document.getElementById('filter-input');
 
@@ -164,6 +166,7 @@ var map = new mapboxgl.Map({
     pitch: 60
 });
 
+// MAPBOX DIRECTION
 var directions = new MapboxDirections({
     styles: style,
     accessToken: mapboxgl.accessToken,
@@ -173,8 +176,9 @@ var directions = new MapboxDirections({
         inputs: false
     }
 });
-
 map.addControl(directions, 'top-right');
+
+// GEOLOCATION
 map.addControl(new mapboxgl.GeolocateControl(), 'top-left');
 
 /*map.on('load', () => {
@@ -187,12 +191,12 @@ map.addControl(new mapboxgl.GeolocateControl(), 'top-left');
   });
 });*/
 
+// CREATING CIRCUIT DES INVALIDES
 map.on('load', function() {
     map.addSource("paris_circuit", {
         type: "vector",
         url: "mapbox://ivanwidyan.cj14q3c35000933pao3nxtdv0-8sjc0"
     });
-
     map.addLayer({
         "id": 'paris_circuit',
         "type": 'line',
@@ -398,7 +402,7 @@ map.on('load', function() {
         'type': 'fill-extrusion',
         'minzoom': 15,
         'paint': {
-            'fill-extrusion-color': '#00FF00',
+            'fill-extrusion-color': '#D9A728',
             'fill-extrusion-height': 15,
             'fill-extrusion-base': 0,
             'fill-extrusion-opacity': 0.5
@@ -431,6 +435,7 @@ map.on('load', function() {
         closeOnClick: false
     });
 
+    // POP UP FOR STANDS
     map.on('mouseenter', 'stand', function (e) {
         map.getCanvas().style.cursor = 'pointer';
         popup.setLngLat(e.lngLat)
@@ -447,6 +452,7 @@ map.on('load', function() {
         popup.remove();
     });
 
+    // POP UP FOR RESTAURANT & MERCHANDISE
     var pointsId = ['restaurant', 'merchandise'];
     for (var i = 0; i < pointsId.length; i++) {
         var id = pointsId[i];
@@ -461,7 +467,6 @@ map.on('load', function() {
                     "</p>")
                 .addTo(map);
         });
-
         map.on('mouseleave', id, function() {
             map.getCanvas().style.cursor = '';
             popup.remove();
@@ -469,6 +474,7 @@ map.on('load', function() {
     }
 });
 
+// INPUT FILTER BY NAME
 filterInput.addEventListener('keyup', function(e) {
     var value = e.target.value.trim().toLowerCase();
     layerIDs.forEach(function(layerID) {
@@ -477,22 +483,18 @@ filterInput.addEventListener('keyup', function(e) {
     });
 });
 
+// TOGGLEABLE LEGENDS
 var toggleableLayerIds = [ 'toilet', 'restaurant', 'hospital', 'merchandise'];
 for (var i = 0; i < toggleableLayerIds.length; i++) {
     var id = toggleableLayerIds[i];
-
     var link = document.getElementById(id);
     var legendsName = link.getElementsByTagName("p");
-
     link.onclick = function (e) {
         var clickedLayer = this.id;
         var legendsName = this.getElementsByTagName("p");
-
         e.preventDefault();
         e.stopPropagation();
-
         var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-
         if (visibility === 'visible') {
             map.setLayoutProperty(clickedLayer, 'visibility', 'none');
             legendsName[0].className = '';

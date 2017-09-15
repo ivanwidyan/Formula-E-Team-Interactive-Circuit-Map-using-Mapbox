@@ -1,5 +1,5 @@
 (function() {
-    // Initializae Firebase
+    // FIREBASE INITIALIZATION
     const config = {
         apiKey: "AIzaSyBcWs5UYSvsm3qFxkofIcHY4p7bDmIJD4g",
         authDomain: "formula-e-60d84.firebaseapp.com",
@@ -17,14 +17,13 @@
     firebase.auth().signOut().then(function() {
       window.location.href = 'index.html';
     }).catch(function(error) {
-      // If there's an error 
+        console.log(error);
     });
   });
 
   // USER INFORMATIONS
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      // User is signed in.
       const displayName = user.displayName;
       const email = user.email;
       const emailVerified = user.emailVerified;
@@ -59,25 +58,22 @@
     console.log(error);
   });
 
-  // LATEST-STANDINGS ELEMENTS
-const latestStandingsList = document.getElementById('latest-standings-table');
+    // LATEST RESULTS TABLE
+    const latestStandingsList = document.getElementById('latest-results-table');
 
-// REFERENCES
-const dbRefLatestStandingList = firebase.database().ref().child('latest-results');
-dbRefLatestStandingList.on('value', snap => console.log(snap.val()));
+    const dbRefLatestStandingList = firebase.database().ref().child('latest-results');
+    dbRefLatestStandingList.on('value', snap => console.log(snap.val()));
 
-// TEST
-
-var keys = firebase.database().ref().child('latest-results/').once('value').then(function(datakey){
-    datakey.forEach(function(data){
-        var driver = data.val();
-        var button = $('<tr><td><div class="number-circle"><strong>'+driver.pos+'</strong></div><td><div class="player-circle-xsmall"><img class="img-circle" src="'+driver.photo+'"></div></td><td><h6>'+driver.team+'</h6><h5><strong>'+ driver.driver +'</strong></h5></td><td><h6>'+driver.gap+'</h6></td><td><h6>'+driver.time+'</h6></td><td><h6>'+driver.kphmph+'</h6></td><td><h6>'+driver.lap+'</h6></td></tr>');
-        button.appendTo('#latest-standings-table'); 
+    var keys = firebase.database().ref().child('latest-results/').once('value').then(function(datakey){
+        datakey.forEach(function(data){
+            var driver = data.val();
+            var button = $('<tr><td><div class="number-circle"><strong>'+driver.pos+'</strong></div><td><div class="player-circle-xsmall"><img class="img-circle" src="'+driver.photo+'"></div></td><td><h6>'+driver.team+'</h6><h5><strong>'+ driver.driver +'</strong></h5></td><td><h6>'+driver.gap+'</h6></td><td><h6>'+driver.time+'</h6></td><td><h6>'+driver.kphmph+'</h6></td><td><h6>'+driver.lap+'</h6></td></tr>');
+            button.appendTo('#latest-results-table'); 
+        });
     });
-});
-
 }());
 
+// NAVBAR DROPDOWN ANIMATION
 $(function(){
     $(".dropdown").hover(            
         function() {
@@ -92,6 +88,7 @@ $(function(){
     });
 });
 
+// CAROUSEL SLIDE INTERVAL
 $('#myCarousel').carousel({
   interval: 5000
 })
@@ -101,7 +98,6 @@ $('#map').affix({
         top: function () {
             var navOuterHeight = $("#myCarousel").height();
             return this.top = navOuterHeight;
-            // return (this.top = $("#myCarousel").outerHeight(true));
         },
         bottom: function () {
             return (this.bottom = $("#belowMap").outerHeight(true));
@@ -109,8 +105,8 @@ $('#map').affix({
     }
 });
 
+// MAPBOX INITIALIZATION
 mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbndpZHlhbiIsImEiOiJjaXpvNmx6OXQwMDE0MnFucTJhODNzcnJzIn0.17aFDly4h5iOl-o_21e4yw';
-
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/ivanwidyan/cj1i588hk00002so4nps9zb4h',
@@ -121,7 +117,6 @@ var map = new mapboxgl.Map({
 });
 
 map.scrollZoom.disable();
-
 map.on('load', function() {
 	/* ADD SOURCES */
 	map.addSource("monaco_circuit", {
@@ -385,6 +380,7 @@ map.on('load', function() {
     });
 });
 
+// SCROLL-TO-FLY FUNCTION
 var chapters = {
   	'monaco': {
   		duration: 5000,
@@ -432,5 +428,4 @@ function isElementOnScreen(id) {
   	var element = document.getElementById(id);
   	var bounds = element.getBoundingClientRect();
   	return (bounds.top * 2) < window.innerHeight && bounds.bottom > (window.innerHeight / 2);
-  	// return bounds.top < window.innerHeight && bounds.bottom > 0;
 }

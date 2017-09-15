@@ -1,3 +1,5 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
 body {
   margin:0;
   padding:0;
@@ -42,4 +44,28 @@ p,h2,h4
   color: #FFFFFF;
   background-color: #12566A;
   *background-color: #003bb3;
+}
+
+/* OVERLAY BUTTON
+-------------------------------------------------- */
+.overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.overlay button {
+    font:600 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background-color: #3386c0;
+    color: #fff;
+    display: inline-block;
+    margin: 0;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.overlay button:hover {
+    background-color:#4ea0da;
 }

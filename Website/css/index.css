@@ -226,6 +226,9 @@ section > .inner-section h2, h3, h5 {
   padding: 75px 50px 50px 50px;
 }
 
+
+/* TEAM STANDINGS
+-------------------------------------------------- */
 .team-standings .top-first {
   margin-bottom: 25px;
 }
@@ -310,8 +313,88 @@ section > .inner-section h2, h3, h5 {
   text-align: center;
 }
 
+.team-standings .mid-second {
+  text-align: center;
+}
+
+/* DRIVER STANDINGS
+-------------------------------------------------- */
+.driver-standings .top-first{
+  margin-bottom: 20px;
+}
+
+.driver-standings .player-circle-large .flag-icon {
+  height: 20px;
+  position: absolute;
+  right: 55px;
+  bottom: 10px;
+  width: auto;
+}
+
+.driver-standings .player-circle-large .img-circle {
+  height: 145px;
+  width: auto;
+}
+
+.driver-standings .top-first .col-sm-5 {
+  margin: 0;
+}
+
+.driver-standings .panel > h6 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.driver-standings .panel > h2 {
+  text-align: center;
+}
+
+.driver-standings .top-second{
+  border: 1px solid white;
+  margin: 20px 25px;
+  padding: 10px 0px;
+  text-align: center;
+}
+
+.driver-standings .top-second .col-sm-2 hr {
+  margin: 5px 0px;
+}
+
+.driver-standings .mid-first {
+  margin-bottom: 25px;
+}
+
+.driver-standings .mid-first .col-sm-5 {
+  text-align: center;
+}
+
+.driver-standings .mid-first .flag-icon {
+  height: 20px;
+  position: absolute;
+  top: 90px;
+  right: 50px;
+  width: auto;
+}
+
+.driver-standings .mid-first .img-circle {
+  height: 110px;
+  width: auto;
+}
+
+.driver-standings .mid-second {
+  text-align: center;
+}
+
 /* LATEST RESULT
 -------------------------------------------------- */
+
+.latest-results .top-buffer > h1 {
+  text-align: right;
+}
+
+.latest-results > .bottom-buffer {
+  padding: 50px;
+}
 
 .number-circle {
   border: 3px solid #FFF;
@@ -416,6 +499,16 @@ section > .inner-section h2, h3, h5 {
 .table-borderless td,
 .table-borderless th {
     border: 0 !important;
+}
+
+/* REPLAY FEATURE
+-------------------------------------------------- */
+.replay-feature {
+  text-align: center;
+}
+
+.replay-feature h1 {
+  color: #FFF;
 }
 
 /* NAVBAR CUSTOMIZATION
@@ -554,6 +647,11 @@ section > .inner-section h2, h3, h5 {
 }
 .navbar-wrapper .navbar .container {
   width: auto;
+}
+
+.navbar-brand img {
+  height: 100%;
+  padding: 5px;
 }
 
 /* CAROUSEL CUSTOMIZATION

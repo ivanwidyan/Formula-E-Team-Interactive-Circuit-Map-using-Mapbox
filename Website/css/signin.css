@@ -1,3 +1,5 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
 html, body {
 	height: 100%;
 	vertical-align: middle;
@@ -14,8 +16,8 @@ body {
 	-o-background-size: cover;
 }
 
-
-
+/* SIGN IN LEFT PANEL
+-------------------------------------------------- */
 .vertical-center {
 	min-height: 100%;
   	min-height: 100vh;
@@ -63,7 +65,8 @@ body {
 	box-shadow: none;
 }
 
-/* OUTLINE BUTTONS */
+/* OUTLINE BUTTON
+-------------------------------------------------- */
 .btn.outline {
     background: none;
     border-radius: 0;
@@ -86,7 +89,8 @@ body {
     box-shadow: none;
 }
 
-/* RIGHT PANEL */
+/* SIGN IN RIGHT PANEL
+-------------------------------------------------- */
 .panel-body-right {
     height: 100%;
 }
@@ -102,7 +106,8 @@ body {
 	font-size: 8px;
 }
 
-/* MODAL */
+/* SIGN UP MODAL
+-------------------------------------------------- */
 .modal-header {
 	background-color: #fff;
 }
@@ -112,7 +117,8 @@ body {
     opacity: 0.75 !important;
 }
 
-/*Placeholder Colors*/
+/* PLACEHOLDER COLOR
+-------------------------------------------------- */
 .form-control::-webkit-input-placeholder {
 	color:#333;
 }

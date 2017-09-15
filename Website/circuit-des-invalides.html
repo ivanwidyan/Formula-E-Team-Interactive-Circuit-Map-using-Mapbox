@@ -5,20 +5,18 @@
     <title>Circuit des Invalides - Directions</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.css' rel='stylesheet' />
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
     <link href="css/direction.css" rel="stylesheet">
 </head>
 <body>
 	<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.js'></script>
 	<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.css' type='text/css' />
 
+	<!-- INFORMATION PANEL -->
 	<div id=information-panel>
 		<h2 class="text-gradient text-uppercase">Programmee Samedi 23 Avril</h2>
 		<div id="inner-information-panel">
@@ -64,7 +62,7 @@
 		<div id="inner-information-panel">
 			<div class="row">
 				<div class="col-sm-6">
-					<a id="toilet" href="#" style="display:block;" class="active">
+					<a id="toilet" href="#" class="active">
 						<div class="media">
 						  	<div class="media-left media-middle">
 						    	<img src="icons/svgs/toilet-15.svg" class="media-object">
@@ -76,7 +74,7 @@
 						</div>
 					</a>
 					<br>
-					<a id="merchandise" href="#" style="display:block;">
+					<a id="merchandise" href="#">
 						<div class="media">
 						  	<div class="media-left media-middle">
 						    	<img src="icons/svgs/clothing-store-15.svg" class="media-object">
@@ -89,7 +87,7 @@
 					</a>
 				</div>
 				<div class="col-sm-6">
-					<a id="hospital" href="#" style="display:block;">
+					<a id="hospital" href="#">
 						<div class="media">
 						  	<div class="media-left media-middle">
 						    	<img src="icons/svgs/hospital-15.svg" class="media-object">
@@ -101,7 +99,7 @@
 						</div>
 					</a>
 					<br>
-					<a id="restaurant" href="#" style="display:block;">
+					<a id="restaurant" href="#">
 						<div class="media">
 						  	<div class="media-left media-middle">
 						    	<img src="icons/svgs/restaurant-15.svg" class="media-object">
@@ -115,14 +113,13 @@
 				</div>
 			</div>
 		</div>	
-
 	</div>
+	<!-- MAP -->
 	<div id='map'>
 		<div class='filter-ctrl'>
 	    	<input id='filter-input' type='text' name='filter' placeholder='Filter by name' />
 		</div>
 	</div>
 	<script src="js/direction.js" type="text/javascript" ></script>
-
 </body>
 </html>
