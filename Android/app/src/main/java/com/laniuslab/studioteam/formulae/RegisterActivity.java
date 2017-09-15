@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.laniuslab.studioteam.formulae.utils.Constants;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener  {
 
@@ -92,9 +93,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             String useremail = user.getEmail();
                             String fix_email = useremail.replace(".",",");
-                            databaseReference = FirebaseDatabase.getInstance().getReference("users/" + fix_email);
-                            databaseReference.child("uid").setValue(user.getUid());
-                            databaseReference.child("nama").setValue(fullname);
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference userReference = database.getReference().child(com.laniuslab.studioteam.formulae.utils.Constants.USER);
+                            userReference.child(fix_email).child(Constants.NAME).setValue(fullname);
+                            userReference.child(fix_email).child(Constants.EMAIL).setValue(user.getEmail());
+                            userReference.child(fix_email).child(Constants.PHOTOURL).setValue(user.getPhotoUrl().toString());
                             startActivity(new Intent(RegisterActivity.this, AuthenticationActivity.class));
                         }else{
                             Toast.makeText(RegisterActivity.this, "Could not register...please try again later", Toast.LENGTH_SHORT).show();

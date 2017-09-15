@@ -60,12 +60,6 @@
             </intent-filter>
         </activity>
         <service android:name="com.mapbox.mapboxsdk.telemetry.TelemetryService" />
-        <activity android:name=".HomeActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
 
     </application>
 

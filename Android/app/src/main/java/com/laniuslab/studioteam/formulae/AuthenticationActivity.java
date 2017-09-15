@@ -20,6 +20,7 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.appevents.internal.Constants;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.google.android.gms.auth.api.Auth;
@@ -37,8 +38,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.TwitterAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Arrays;
 
@@ -70,7 +74,6 @@ public class AuthenticationActivity extends AppCompatActivity implements View.On
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
 
     //Utility
-    private DatabaseReference databaseReference;
     public int backButtonCount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -185,7 +188,7 @@ public class AuthenticationActivity extends AppCompatActivity implements View.On
     }
 
     private void signInFirebase(){
-        String email = editTextEmail.getText().toString().trim();
+        final String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
         if(TextUtils.isEmpty(email)){
             //email is empty
@@ -214,13 +217,24 @@ public class AuthenticationActivity extends AppCompatActivity implements View.On
                             Toast.makeText(AuthenticationActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }else{
-                            Toast.makeText(AuthenticationActivity.this,"Sign-In with Formula-E Account Successful", Toast.LENGTH_LONG).show();
-                            FirebaseUser user = firebaseAuth.getCurrentUser();
-                            String useremail = user.getEmail();
-                            String fix_email = useremail.replace(".",",");
-                            databaseReference = FirebaseDatabase.getInstance().getReference("users/" + fix_email);
-                            databaseReference.child("uid").setValue(user.getUid());
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference userReference = database.getReference().child(com.laniuslab.studioteam.formulae.utils.Constants.USER);
+                            userReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    for(DataSnapshot val : dataSnapshot.getChildren()){
+                                        if(email.compareTo(val.child(com.laniuslab.studioteam.formulae.utils.Constants.EMAIL).getValue(String.class))==0) {
+                                            String username = val.child(com.laniuslab.studioteam.formulae.utils.Constants.NAME).getValue(String.class);
+                                            Toast.makeText(AuthenticationActivity.this, "Welcome " + username, Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                }
 
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
                         }
 
                     }
@@ -246,14 +260,15 @@ public class AuthenticationActivity extends AppCompatActivity implements View.On
                             Toast.makeText(AuthenticationActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }else{
-                            Toast.makeText(AuthenticationActivity.this,"Sign-In with Google+ Successful", Toast.LENGTH_LONG).show();
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             String useremail = user.getEmail();
                             String fix_email = useremail.replace(".",",");
-                            databaseReference = FirebaseDatabase.getInstance().getReference("users/" + fix_email);
-                            databaseReference.child("uid").setValue(user.getUid());
-                            databaseReference.child("nama").setValue(user.getDisplayName());
-                            //databaseReference.child("photoUrl").setValue(user.getPhotoUrl());
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference userReference = database.getReference().child(com.laniuslab.studioteam.formulae.utils.Constants.USER);
+                            userReference.child(fix_email).child(com.laniuslab.studioteam.formulae.utils.Constants.NAME).setValue(user.getDisplayName());
+                            userReference.child(fix_email).child(com.laniuslab.studioteam.formulae.utils.Constants.EMAIL).setValue(user.getEmail());
+                            userReference.child(fix_email).child(com.laniuslab.studioteam.formulae.utils.Constants.PHOTOURL).setValue(user.getPhotoUrl().toString());
+                            Toast.makeText(AuthenticationActivity.this,"Welcome " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
                         }
                         // ...
                     }
@@ -279,13 +294,15 @@ public class AuthenticationActivity extends AppCompatActivity implements View.On
                             Toast.makeText(AuthenticationActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }else{
-                            Toast.makeText(AuthenticationActivity.this,"Sign-In with Facebook Successful", Toast.LENGTH_LONG).show();
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             String useremail = user.getEmail();
                             String fix_email = useremail.replace(".",",");
-                            databaseReference = FirebaseDatabase.getInstance().getReference("users/" + fix_email);
-                            databaseReference.child("uid").setValue(user.getUid());
-                            databaseReference.child("nama").setValue(user.getDisplayName());
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference userReference = database.getReference().child(com.laniuslab.studioteam.formulae.utils.Constants.USER);
+                            userReference.child(fix_email).child(com.laniuslab.studioteam.formulae.utils.Constants.NAME).setValue(user.getDisplayName());
+                            userReference.child(fix_email).child(com.laniuslab.studioteam.formulae.utils.Constants.EMAIL).setValue(user.getEmail());
+                            userReference.child(fix_email).child(com.laniuslab.studioteam.formulae.utils.Constants.PHOTOURL).setValue(user.getPhotoUrl().toString());
+                            Toast.makeText(AuthenticationActivity.this,"Welcome " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

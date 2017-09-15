@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,7 @@ import com.laniuslab.studioteam.formulae.AuthenticationActivity;
 import com.laniuslab.studioteam.formulae.HomeActivity;
 import com.laniuslab.studioteam.formulae.NewHomeActivity;
 import com.laniuslab.studioteam.formulae.R;
+import com.laniuslab.studioteam.formulae.utils.Constants;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -57,6 +59,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        Bundle args = new Bundle();
+        args = getArguments();
+        String getPhotourl = args.getString("photoUrl");
+        Log.d("PHOTOURL",getPhotourl.toString());
         profileImage = (CircleImageView)view.findViewById(R.id.profile_image);
         profileName = (TextView) view.findViewById(R.id.profile_name);
         buttonLogout = (Button) view.findViewById(R.id.buttonLogout);
@@ -82,26 +88,24 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         progressDialog.setMessage("Loading");
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.show();
+        if(getPhotourl!=null){
+            Glide.with(getActivity().getApplicationContext()).load(getPhotourl)
+                    .thumbnail(0.5f)
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(profileImage);
+        }else{
+            profileImage.setImageResource(R.drawable.profile);
+        }
         FirebaseUser user = firebaseAuth.getCurrentUser();
         String useremail = user.getEmail();
         String fix_email = useremail.replace(".",",");
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference userReference = database.getReference().child("user").child(fix_email);
+        DatabaseReference userReference = database.getReference().child(Constants.USER).child(fix_email);
         userReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                profileName.setText(dataSnapshot.child("nama").getValue(String.class));
-                String photoUrl = dataSnapshot.child("photoUrl").getValue(String.class);
-                if(photoUrl==null){
-
-                }else{
-                    Glide.with(getActivity().getApplicationContext()).load(photoUrl)
-                            .thumbnail(0.5f)
-                            .crossFade()
-                            .diskCacheStrategy(DiskCacheStrategy.ALL)
-                            .into(profileImage);
-
-                }
+                profileName.setText(dataSnapshot.child(Constants.NAME).getValue(String.class));
                 progressDialog.dismiss();
             }
 
@@ -140,5 +144,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
         //Go to Main Screen
         //startActivity(new Intent(UserActivity.this, MainActivity.class));
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        mGoogleApiClient.stopAutoManage(getActivity());
+        mGoogleApiClient.disconnect();
     }
 }

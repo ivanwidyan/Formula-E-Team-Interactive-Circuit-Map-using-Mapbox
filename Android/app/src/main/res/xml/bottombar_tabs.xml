@@ -4,7 +4,7 @@
         icon="@drawable/ic_history"
         inActiveColor="#D3D3D3"
         activeColor="#019DCB"
-        title="Recent" />
+        title="Lastest" />
     <tab
         id="@+id/tab_race"
         icon="@drawable/ic_races"
@@ -22,7 +22,7 @@
         icon="@drawable/ic_video"
         inActiveColor="#D3D3D3"
         activeColor="#019DCB"
-        title="Video" />
+        title="Media" />
     <tab
         id="@+id/tab_profile"
         icon="@drawable/ic_person"
