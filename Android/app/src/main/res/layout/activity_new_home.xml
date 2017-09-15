@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.laniuslab.studioteam.formulae.NewHomeActivity">
+    tools:context="com.mapbox.formulae.activity.NewHomeActivity">
 
     <!-- This could be your fragment container, or something -->
     <FrameLayout

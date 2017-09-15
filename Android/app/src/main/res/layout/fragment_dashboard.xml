@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="invisible"
-    tools:context="com.laniuslab.studioteam.formulae.Fragment.DashboardFragment">
+    tools:context="com.mapbox.formulae.fragment.DashboardFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
@@ -33,6 +33,16 @@
                     android:textColor="@android:color/white"
                     android:textSize="28sp"
                     android:textStyle="bold" />
+                <Button
+                    android:id="@+id/btn_buyticket"
+                    android:layout_width="125dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="65dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Buy Tickets"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorPrimary"
+                    android:layout_gravity="center"/>
 
             </FrameLayout>
 
@@ -217,8 +227,8 @@
 
                     <Button
                         android:id="@+id/btn_schedule"
-                        android:layout_width="200dp"
-                        android:layout_height="45dp"
+                        android:layout_width="175dp"
+                        android:layout_height="35dp"
                         android:layout_marginTop="10dp"
                         android:text="View Full Schedule"
                         android:textColor="@android:color/white"
@@ -295,8 +305,8 @@
 
                     <Button
                         android:id="@+id/btn_eventmap"
-                        android:layout_width="200dp"
-                        android:layout_height="45dp"
+                        android:layout_width="150dp"
+                        android:layout_height="35dp"
                         android:layout_marginTop="25dp"
                         android:layout_marginBottom="20dp"
                         android:text="View Event Map"
@@ -326,8 +336,8 @@
 
             <Button
                 android:id="@+id/btn_faq"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_width="65dp"
+                android:layout_height="35dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:text="FAQ"

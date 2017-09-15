@@ -49,6 +49,50 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218918819433:android:ec20703cbad66e48",
+        "android_client_info": {
+          "package_name": "com.mapbox.formulae"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218918819433-qhtoc23t083ho8v3q7pou9ag30tpiqna.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mapbox.formulae",
+            "certificate_hash": "5e8d93e79ae8539c6fffb90fe46f652dc524d9be"
+          }
+        },
+        {
+          "client_id": "218918819433-u4m7sb8pbt1uuorpu77qpkl79vd5vbee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW0FeXT-Hq9Du4Sy7YJvyo1fDbeE7Qpyg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218918819433-u4m7sb8pbt1uuorpu77qpkl79vd5vbee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"
