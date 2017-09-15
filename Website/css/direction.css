@@ -82,7 +82,7 @@ html, body {
 .filter-ctrl {
     position: absolute;
     top: 10px;
-    left: 50px;
+    left: 10px;
     z-index: 1;
     width: 180px;
 }

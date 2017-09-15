@@ -179,7 +179,7 @@ var directions = new MapboxDirections({
 map.addControl(directions, 'top-right');
 
 // GEOLOCATION
-map.addControl(new mapboxgl.GeolocateControl(), 'top-left');
+map.addControl(new mapboxgl.GeolocateControl(), 'bottom-left');
 
 /*map.on('load', () => {
   button.addEventListener('click', function() {
