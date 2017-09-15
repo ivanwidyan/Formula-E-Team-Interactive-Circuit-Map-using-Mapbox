@@ -141,6 +141,11 @@ section > .inner-section h2, h3, h5 {
   color: #AAA;
 }
 
+.latest-media img {
+  width: 100%;
+  height: auto;
+}
+
 .text-gradient {
   background: -webkit-linear-gradient(top, #00c8ff, #12566a);
   background: linear-gradient(top, #00c8ff, #12566a);
@@ -221,6 +226,90 @@ section > .inner-section h2, h3, h5 {
   padding: 75px 50px 50px 50px;
 }
 
+.team-standings .top-first {
+  margin-bottom: 25px;
+}
+
+.team-standings #team-logo {
+  background-color: #FFF;
+  width: 60%;
+  text-align: center;
+}
+
+.team-standings #team-logo img {
+  height: 35px;
+  text-align: center;
+}
+
+.team-standings .top-first .col-sm-5 h2 {
+  margin: 0;
+}
+
+.team-standings .top-second {
+  padding: 0px 50px;
+  text-align: center;
+}
+
+.team-standings .top-second .player-circle-small #flag-icon {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  height: 20px;
+  width: auto;
+}
+
+.team-standings .top-second .player-circle-small .img-circle {
+  height: 75px;
+  width: 75px;
+}
+
+.team-standings .top-third {
+  border: 1px solid white;
+  margin: 20px 25px;
+  padding: 10px 0px;
+  text-align: center;
+}
+
+.team-standings .top-third hr {
+  margin: 5px 0px;
+}
+
+.team-standings .mid-first {
+  margin-bottom: 25px;
+}
+
+.team-standings .mid-first .col-sm-5 {
+  text-align: left;
+}
+
+.team-standings .mid-first .flag-icon {
+  width: 70%;
+}
+
+.team-standings .mid-first .flag-icon img{
+  height: 15px;
+  float: left;
+  width: auto;
+}
+
+.team-standings .mid-first .team-logo {
+  background-color: #FFF;
+  width: 70%;
+  text-align: center;
+}
+
+.team-standings .mid-first .team-logo img {
+  height: 30px;
+}
+
+.team-standings .mid-first .team-score {
+  width: 70%;  margin-top: 2px;
+}
+
+.team-standings .mid-first .team-score h3 {
+  text-align: center;
+}
+
 /* LATEST RESULT
 -------------------------------------------------- */
 
@@ -233,6 +322,25 @@ section > .inner-section h2, h3, h5 {
   text-align: center;
   color: #FFF;
   padding-top: 2px;
+}
+
+.latest-results .player-circle-xsmall {
+  margin: 0;
+  border-top: 3px solid #00c8ff;
+  border-bottom: 3px solid #12566a;
+  border-left: 3px solid #098FB5;
+  border-right: 3px solid #098FB5;
+  border-radius: 30px;
+  box-shadow: 0 0 2px #888;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  color: #FFF;
+}
+
+.latest-results .player-circle-xsmall img {
+  height: 25px;
+  width: 25px;
 }
 
 .latest-results h1 {
@@ -310,7 +418,7 @@ section > .inner-section h2, h3, h5 {
     border: 0 !important;
 }
 
-/* CUSTOMIZE THE NAVBAR
+/* NAVBAR CUSTOMIZATION
 -------------------------------------------------- */
 .caret-up {
     width: 0; 
@@ -448,7 +556,7 @@ section > .inner-section h2, h3, h5 {
   width: auto;
 }
 
-/* CUSTOMIZE THE CAROUSEL
+/* CAROUSEL CUSTOMIZATION
 -------------------------------------------------- */
 #myCarousel .carousel-indicators li {
   position: relative;
@@ -561,6 +669,10 @@ section > .inner-section h2, h3, h5 {
   text-align: center;
   align-content: center;
   align-items: center;
+}
+
+.container > .top-buffer > h1 {
+  text-align: right;
 }
 
 /* VISIBILITY

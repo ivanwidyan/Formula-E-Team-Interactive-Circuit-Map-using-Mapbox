@@ -343,12 +343,9 @@ map.on('load', function () {
     map.on('mousemove', 'point', function(e) {
         // Change the cursor style as a UI indicator.
         map.getCanvas().style.cursor = 'pointer';
-
-        // Populate the popup and set its coordinates
-        // based on the feature found.
         popup.setLngLat(e.features[0].geometry.coordinates)
             .setHTML("<img src=" + e.features[0].properties.photo +
-                "/><h2 align=center>" + 
+                "><h2 align=center>" + 
                 e.features[0].properties.number + 
                 "</h2><h4 align=center>" + 
                 e.features[0].properties.name + 

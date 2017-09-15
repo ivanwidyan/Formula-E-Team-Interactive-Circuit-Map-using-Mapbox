@@ -9,17 +9,15 @@
     <title>Formula E</title>
 
     <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.0/mapbox-gl.js'></script>
-
     <link href="css/index.css" rel="stylesheet">
   </head>
 
   <body>
+  	<!-- NAVBAR -->
     <div class="navbar-wrapper">
       	<div class="container">
        		<nav class="navbar-default navbar-static-top">
@@ -89,7 +87,6 @@
 	                  	</ul>
 	                </li>
 	            </ul>
-	            <!-- Top Menu Items -->
             </div>
           </div>
         </nav>
@@ -151,6 +148,7 @@
     </div>
 
      <div id='map'></div>
+     <!-- SCROLL LATEST RACING MATCHES -->
 	 <div id='features'>
 	    <section id='monaco'>
 	    	<div class="inner-section">
@@ -261,35 +259,35 @@
 	</div>
 
 	<div id="belowMap">
-
+		<!-- LATEST MEDIA -->
 		<div class="container latest-media">
 	    	<div class="top-buffer bottom-buffer">
-	    		<h1 style="text-align: right;">LATEST MEDIA</h1>
+	    		<h1>LATEST MEDIA</h1>
 	    	</div>
 	    	<div class="row bottom-buffer">
 	          	<div class="col-md-3">
-	          		<img src="img/latest-media/1.jpg" alt="Lights" style="width:100%; height:auto;">
+	          		<img src="img/latest-media/1.jpg" >
 	          		<h4 class="text-uppercase">Chris Hemsworth: “It was good fun”</h4>
 		            <h5 class="text-gradient"><strong>NEW YORK CITY | 21 JUL, 2017</strong></h4>
 			        <h5>Hollywood super star Chris Hemsworth quite literally took the Formula E car for a spin during...</h5>
 			        <h6>SHOW MORE</h6>
 			    </div>
 		        <div class="col-md-3">
-			        <img src="img/latest-media/2.jpg" alt="Lights" style="width:100%; height:auto;">
+			        <img src="img/latest-media/2.jpg">
 		            <h4 class="text-uppercase">30+ Overtakes Compilation! </h4>
 		            <h5 class="text-gradient"><strong>LONDON | 21 JUL, 2017</strong></h4>
 			        <h5>Formula's inaugural trip to New York City gave us plenty of action and competitive racing...</h5>
 			        <h6>SHOW MORE</h6>
 			    </div>
 		        <div class="col-md-3">
-			        <img src="img/latest-media/3.jpg" alt="Lights" style="width:100%; height:auto;">
+			        <img src="img/latest-media/3.jpg">
 		            <h4 class="text-uppercase">Two Poles, Two Wins, Much Drama!</h4>
 		            <h5 class="text-gradient"><strong>LONDON | 21 JUL, 2017</strong></h4>
 			        <h5>Enjoy highlights from DS Virgin Racing's thrilling weekend, from rookie Alex Lynn's shock pole...</h5>
 			        <h6>SHOW MORE</h6>
 			    </div>
 			    <div class="col-md-3">
-			        <img src="img/latest-media/4.jpg" alt="Lights" style="width:100%; height:auto;">
+			        <img src="img/latest-media/4.jpg">
 	            	<h4 class="text-uppercase">Rewind: Formula E’s nail-biting deciders</h4>
 		            <h5 class="text-gradient"><strong>LONDON | 21 JUL, 2017</strong></h4>
 			        <h5>The Season 3 Formula E champion will be crowned next weekend in Montreal. One of Sebastien Buemi...</h5>
@@ -299,101 +297,106 @@
 	        </div>
 	    </div>
 
+	    <!-- LATEST STANDINGS -->
 	    <div class="container latest-standings">
 	    	<div class="top-buffer">
-	    		<h1 style="text-align: right;">LATEST STANDINGS</h1>
+	    		<h1>LATEST STANDINGS</h1>
 	    	</div>
 	    	<div class="row bottom-buffer">
-	          	<div class="col-md-6">
+	          	<div class="col-md-6 team-standings">
 	          		<div class="panel">
 	          			<h4 class="background-gradient">TEAM STANDINGS</h4>
-	          			<div class="row" style="margin-bottom: 25px;">
+	          			<div class="row top-first">
 	          				<div class="col-sm-1">
 	          					<div class="number-circle"><strong>1</strong></div>
 	          				</div>
 	          				<div class="col-sm-6">
-	          					<h2>RENAULT E. DAMS</h2>
-	          					<div style="background-color: #FFF; width: 60%; text-align: center;">
-	          						<img src="http://d3iyn1f5w83nva.cloudfront.net/media/305071/renaultedamslarge.png?anchor=center&mode=crop&quality=80&width=600&rnd=131321641510000000" style="height: 35px; text-align: center;">
+	          					<h2><img height="15px" width="auto" src="http://img.freeflagicons.com/thumb/round_icon/france/france_640.png">RENAULT E. DAMS</h2>
+	          					<div id="team-logo">
+	          						<img src="http://d3iyn1f5w83nva.cloudfront.net/media/305071/renaultedamslarge.png?anchor=center&mode=crop&quality=80&width=600&rnd=131321641510000000">
 	          					</div>
 	          				</div>
 	          				<div class="col-sm-5">
-	          					<h2 style="margin: 0;">Total</h2>
-	          					<h1><strong>124</strong></h1>
+	          					<h2>Total</h2>
+	          					<h1><strong>268</strong></h1>
 	          				</div>
 	          			</div>
-	          			<div class="row" style="padding: 0px 50px; text-align: center;">
+	          			<div class="row top-second">
 	          				<div class="col-md-4">
 	          					<div class="player-circle-small">
-	          						<img class="img-circle" src="img/racers/sebastian-buemi.png" style="height: 75px; width: 75px;">	
+	          						<img id="flag-icon" src="http://img.freeflagicons.com/thumb/round_icon/france/france_640.png">
+	          						<img class="img-circle" src="img/racers/sebastian-buemi.png">
 	          					</div>
 	          					<h6>SEBASTIAN<br>BUEMI</h6>
 	          				</div>
 	          				<div class="col-md-4">
-	          					<div class="player-circle-small" style="text-align: center;">
-	          						<img class="img-circle" src="img/racers/nicolas-prost.png" style="height: 75px; width: 75px;">
+	          					<div class="player-circle-small">
+	          						<img id="flag-icon" src="http://img.freeflagicons.com/thumb/round_icon/france/france_640.png">
+	          						<img class="img-circle" src="img/racers/nicolas-prost.png">
 	          					</div>
 	          					<h6>NICOLAS<br>PROST</h6>
 	          				</div>
 	          				<div class="col-md-4">
 	          					<div class="player-circle-small">
-	          						<img class="img-circle" src="img/racers/pierre-gasly.png" style="height: 75px; width: 75px;">
-	          						
+	          						<img id="flag-icon" src="http://img.freeflagicons.com/thumb/round_icon/france/france_640.png">
+	          						<img class="img-circle" src="img/racers/pierre-gasly.png">
 	          					</div>
 	          					<h6>PIERRE<br>GASLY</h6>
 	          				</div>
 	          			</div>
-	          			<div class="row" style="border: 1px solid white; margin: 20px 25px; padding: 10px 0px; text-align: center;">
+	          			<div class="row top-third">
 	          				<div class="col-sm-1"></div>
 	          				<div class="col-sm-2"">
-	          					<h3>20</h3><hr style="margin: 5px 0px;">
-	          					<h5 class="text-gradient">R9</h5>
+	          					<h3>1</h3><hr>
+	          					<h5 class="text-gradient">R12</h5>
 	          				</div>
 	          				<div class="col-sm-2" >
-	          					<h3>20</h3><hr style="margin: 5px 0px;">
+	          					<h3>8</h3><hr>
+	          					<h5 class="text-gradient">R11</h5>
+	          				</div>
+	          				<div class="col-sm-2">
+	          					<h3>20</h3><hr>
+	          					<h5 class="text-gradient">R10</h5>
+	          				</div>
+	          				<div class="col-sm-2">
+	          					<h3>10</h3><hr>
 	          					<h5 class="text-gradient">R9</h5>
 	          				</div>
 	          				<div class="col-sm-2">
-	          					<h3>20</h3><hr style="margin: 5px 0px;">
-	          					<h5 class="text-gradient">R9</h5>
-	          				</div>
-	          				<div class="col-sm-2">
-	          					<h3>20</h3><hr style="margin: 5px 0px;">
-	          					<h5 class="text-gradient">R9</h5>
-	          				</div>
-	          				<div class="col-sm-2">
-	          					<h3>20</h3><hr style="margin: 5px 0px;">
-	          					<h5 class="text-gradient">R9</h5>
+	          					<h3>29</h3><hr>
+	          					<h5 class="text-gradient">R8</h5>
 	          				</div>
 	          				<div class="col-sm-1"></div>
 	          			</div>
-          				<div class="row" style="margin-bottom: 25px;">
+          				<div class="row mid-first">
 	          				<div class="col-sm-1">
 	          					<div class="number-circle"><strong>2</strong></div>
 	          				</div>
-	          				<div class="col-sm-5" style="text-align: center;">
-	          					<div style="width: 70%;">
+	          				<div class="col-sm-5">
+	          					<div class="flag-icon">
+	          						<img src="http://img.freeflagicons.com/thumb/round_icon/france/france_640.png">
 	          						<h2>ABT SCHAEFLER<br>AUDI SPORT</h2>
 	          					</div>
-	          					<div style="background-color: #FFF; width: 70%; text-align: center;">
-	          						<img src="http://d3iyn1f5w83nva.cloudfront.net/media/300895/abtlarge.png?anchor=center&mode=crop&quality=80&width=600&rnd=131054843870000000" style="height: 30px; text-align: center;">
+	          					<div class="team-logo">
+	          						<img src="http://d3iyn1f5w83nva.cloudfront.net/media/300895/abtlarge.png?anchor=center&mode=crop&quality=80&width=600&rnd=131054843870000000">
 	          					</div>
-	          					<div style="width: 70%;  margin-top: 2px;">
-	          						<h3>194</h3>
+	          					<div class="team-score">
+	          						<h3>248</h3>
 	          					</div>
 	          				</div>
 	          				<div class="col-sm-1">
 	          					<div class="number-circle"><strong>3</strong></div>
 	          				</div>
-	          				<div class="col-sm-5" style="text-align: center;">
-	          					<div style="width: 70%;">
+	          				<div class="col-sm-5">
+	          					<div class="flag-icon">
+	          						<img src="http://img.freeflagicons.com/thumb/round_icon/france/france_640.png">
 	          						<h2>MAHINDRA<br>RACING</h2>
 	          					</div>
-	          					<div style="background-color: #FFF; width: 70%; text-align: center;">
-	          						<img src="http://d3iyn1f5w83nva.cloudfront.net/media/300899/mahindralarge.png?anchor=center&mode=crop&quality=80&width=600&rnd=131054843860000000" style="height: 30px; text-align: center;">
+	          					<div class="team-logo">
+	          						<img src="http://d3iyn1f5w83nva.cloudfront.net/media/300899/mahindralarge.png?anchor=center&mode=crop&quality=80&width=600&rnd=131054843860000000">
 	          					</div>
-	          					<div style="width: 70%;  margin-top: 2px;">
-	          						<h3>194</h3>
+	          					<div class="team-score">
+	          						<h3>215</h3>
 	          					</div>
 	          				</div>
 	          			</div>
@@ -401,29 +404,31 @@
 	          				<div class="col-sm-1">
 	          					<div class="number-circle"><strong>4</strong></div>
 	          				</div>
-	          				<div class="col-sm-5" style="text-align: center;">
+	          				<div class="col-sm-5" style="text-align: left;">
 	          					<div style="width: 70%;">
+	          						<img height="15px" style="float: left;" width="auto" src="http://img.freeflagicons.com/thumb/round_icon/france/france_640.png">
 	          						<h2>DS VIRGIN<br>RACING</h2>
 	          					</div>
 	          					<div style="background-color: #FFF; width: 70%; text-align: center;">
 	          						<img src="http://d3iyn1f5w83nva.cloudfront.net/media/303980/dsvr-standard-lock-up-chrome-black-1.jpg?anchor=center&mode=crop&quality=80&width=600&rnd=131208501530000000" style="height: 30px; text-align: center;">
 	          					</div>
 	          					<div style="width: 70%; margin-top: 2px;">
-	          						<h3>194</h3>
+	          						<h3>190</h3>
 	          					</div>
 	          				</div>
 	          				<div class="col-sm-1">
 	          					<div class="number-circle"><strong>5</strong></div>
 	          				</div>
-	          				<div class="col-sm-5" style="text-align: center;">
+	          				<div class="col-sm-5" style="text-align: left;">
 	          					<div style="width: 70%;">
-	          						<h2><br>TECHEETAH<br></h2>
+	          						<img height="15px" style="float: left;" width="auto" src="http://img.freeflagicons.com/thumb/round_icon/france/france_640.png">
+	          						<h2>TECHEETAH<br><br></h2>
 	          					</div>
 	          					<div style="background-color: #FFF; width: 70%; text-align: center;">
 	          						<img src="http://d3iyn1f5w83nva.cloudfront.net/media/305068/techeetah_center_white_v2.png?anchor=center&mode=crop&quality=80&width=150&rnd=131320827740000000" style="height: 30px; text-align: center;">
 	          					</div>
 	          					<div style="width: 70%; margin-top: 2px;">
-	          						<h3>194</h3>
+	          						<h3>156</h3>
 	          					</div>
 	          				</div>
 	          			</div>
@@ -441,7 +446,8 @@
 	          				</div>
 	          				<div class="col-sm-6">
 	          					<div class="player-circle-large">
-	          						<img class="img-circle" src="img/racers/sebastian-buemi.png" style="height: 145px; width: auto;">
+	          						<img height="20px" style="position: absolute; right: 55px; bottom: 10px;" width="auto" src="http://img.freeflagicons.com/thumb/round_icon/france/france_640.png">
+	          						<img class="img-circle" src="img/racers/lucas-di-grassi.png" style="height: 145px; width: auto;">
 	          					</div>
 	          				</div>
 	          				<div class="col-sm-5">
@@ -449,29 +455,29 @@
 	          					<h1><strong>124</strong></h1>
 	          				</div>
 	          			</div>
-	          			<h6 class="lead" style="text-align: center; margin-bottom: 0;">19 SEBASTIAN BUEMI</h6>
-	          			<h2 style="text-align: center;">RENAULT E. DREAMS</h2>
+	          			<h6 class="lead" style="text-align: center; margin-bottom: 0;">11 LUCAS DI GRASSI</h6>
+	          			<h2 style="text-align: center;">ABT SCHAEFFLER AUDI SPORT</h2>
 	          			<div class="row" style="border: 1px solid white; margin: 20px 25px; padding: 10px 0px; text-align: center;">
 	          				<div class="col-sm-1"></div>
 	          				<div class="col-sm-2"">
-	          					<h3>20</h3><hr style="margin: 5px 0px;">
-	          					<h5 class="text-gradient">R9</h5>
+	          					<h3>6</h3><hr style="margin: 5px 0px;">
+	          					<h5 class="text-gradient">R12</h5>
 	          				</div>
 	          				<div class="col-sm-2" >
-	          					<h3>20</h3><hr style="margin: 5px 0px;">
+	          					<h3>28</h3><hr style="margin: 5px 0px;">
+	          					<h5 class="text-gradient">R11</h5>
+	          				</div>
+	          				<div class="col-sm-2">
+	          					<h3>10</h3><hr style="margin: 5px 0px;">
+	          					<h5 class="text-gradient">R10</h5>
+	          				</div>
+	          				<div class="col-sm-2">
+	          					<h3>12</h3><hr style="margin: 5px 0px;">
 	          					<h5 class="text-gradient">R9</h5>
 	          				</div>
 	          				<div class="col-sm-2">
-	          					<h3>20</h3><hr style="margin: 5px 0px;">
-	          					<h5 class="text-gradient">R9</h5>
-	          				</div>
-	          				<div class="col-sm-2">
-	          					<h3>20</h3><hr style="margin: 5px 0px;">
-	          					<h5 class="text-gradient">R9</h5>
-	          				</div>
-	          				<div class="col-sm-2">
-	          					<h3>20</h3><hr style="margin: 5px 0px;">
-	          					<h5 class="text-gradient">R9</h5>
+	          					<h3>15</h3><hr style="margin: 5px 0px;">
+	          					<h5 class="text-gradient">R8</h5>
 	          				</div>
 	          				<div class="col-sm-1"></div>
 	          			</div>
@@ -481,10 +487,11 @@
 	          				</div>
 	          				<div class="col-sm-5" style="text-align: center;">
 	          					<div class="player-circle-medium">
+	          						<img height="20px" style="position: absolute; top: 90px; right: 50px;" width="auto" src="http://img.freeflagicons.com/thumb/round_icon/france/france_640.png">
 	          						<img class="img-circle" src="img/racers/sebastian-buemi.png" style="height: 110px; width: auto;">
 	          					</div>
-	          					<h6>11 L. DI GRASSI</h6>
-	          					<h2>ABT SCHAEFLER<br>AUDI SPORT</h2>
+	          					<h6>9 S. BUEMI</h6>
+	          					<h2>RENAULT<br>E.DAMS</h2>
 	          					<h3>194</h3>
 	          				</div>
 	          				<div class="col-sm-1">
@@ -492,10 +499,11 @@
 	          				</div>
 	          				<div class="col-sm-5" style="text-align: center;">
 	          					<div class="player-circle-medium">
-	          						<img class="img-circle" src="img/racers/sebastian-buemi.png" style="height: 110px; width: auto;">
+	          						<img height="20px" style="position: absolute; top: 90px; right: 50px;" width="auto" src="http://img.freeflagicons.com/thumb/round_icon/france/france_640.png">
+	          						<img class="img-circle" src="img/racers/f-rosenqvist.png" style="height: 110px; width: auto;">
 	          					</div>
-	          					<h6>11 L. DI GRASSI</h6>
-	          					<h2>ABT SCHAEFLER<br>AUDI SPORT</h2>
+	          					<h6>19 L. F. ROSENQVIST</h6>
+	          					<h2>MAHINDRA<br>RACING</h2>
 	          					<h3>194</h3>
 	          				</div>
 	          			</div>
@@ -522,7 +530,7 @@
 							</div>
 	          				<div class="col-md-8">
 	          					<h5>Monaco ePrix</h5>
-	          					<h4>MEXICO CITY, MX</h4><hr>
+	          					<h4><img height="15px" width="auto" src="http://img.freeflagicons.com/thumb/round_icon/france/france_640.png">MEXICO CITY, MX</h4><hr>
 	          					<h6>SEE FULL RESULT</h6>
 	          				</div>	
 	          			</div>
@@ -534,7 +542,7 @@
 							</div>
 	          				<div class="col-md-8">
 	          					<h5>Monaco ePrix</h5>
-	          					<h4>MEXICO CITY, MX</h4><hr>
+	          					<h4><img height="15px" width="auto" src="http://img.freeflagicons.com/thumb/round_icon/france/france_640.png">MEXICO CITY, MX</h4><hr>
 	          					<h6>SEE FULL RESULT</h6>
 	          				</div>
 	          			</div>
@@ -546,7 +554,7 @@
 							</div>
 	          				<div class="col-md-8">
 	          					<h5>Monaco ePrix</h5>
-	          					<h4>MEXICO CITY, MX</h4><hr>
+	          					<h4><img height="15px" width="auto" src="http://img.freeflagicons.com/thumb/round_icon/france/france_640.png">MEXICO CITY, MX</h4><hr>
 	          					<h6>SEE FULL RESULT</h6>
 	          				</div>
 	          			</div>
@@ -576,199 +584,7 @@
 						        <th>LAP</th>
 						      </tr>
 						    </thead>
-						    <tbody>
-							    <tr>	
-							        <td>
-							        	<div class="number-circle"><strong>1</strong>
-							        	</div>
-							        <td>
-							        	<img src="img/racers/sebastian-buemi.png" style="height: 25px; width: 25px;">
-							        </td>
-							        <td>
-							        	<h6>RENAULT E.DAMS</h6>
-							        	<h5><strong>9 S. BUEMI</strong></h5>
-							        </td>
-							        <td><h6>+11.381</h6></td>
-							        <td><h6>58:20:769</h6></td>
-							        <td><h6>98.4 / 61.1</h6></td>
-							        <td><h6>49</h6></td>
-							    </tr>
-							    <tr>	
-							        <td>
-							        	<div class="number-circle"><strong>1</strong>
-							        	</div>
-							        <td>
-							        	<img src="img/racers/sebastian-buemi.png" style="height: 25px; width: 25px;">
-							        </td>
-							        <td>
-							        	<h6>RENAULT E.DAMS</h6>
-							        	<h5><strong>9 S. BUEMI</strong></h5>
-							        </td>
-							        <td><h6>+11.381</h6></td>
-							        <td><h6>58:20:769</h6></td>
-							        <td><h6>98.4 / 61.1</h6></td>
-							        <td><h6>49</h6></td>
-							    </tr>
-							    <tr>	
-							        <td>
-							        	<div class="number-circle"><strong>1</strong>
-							        	</div>
-							        <td>
-							        	<img src="img/racers/sebastian-buemi.png" style="height: 25px; width: 25px;">
-							        </td>
-							        <td>
-							        	<h6>RENAULT E.DAMS</h6>
-							        	<h5><strong>9 S. BUEMI</strong></h5>
-							        </td>
-							        <td><h6>+11.381</h6></td>
-							        <td><h6>58:20:769</h6></td>
-							        <td><h6>98.4 / 61.1</h6></td>
-							        <td><h6>49</h6></td>
-							    </tr>
-							    <tr>	
-							        <td>
-							        	<div class="number-circle"><strong>1</strong>
-							        	</div>
-							        <td>
-							        	<img src="img/racers/sebastian-buemi.png" style="height: 25px; width: 25px;">
-							        </td>
-							        <td>
-							        	<h6>RENAULT E.DAMS</h6>
-							        	<h5><strong>9 S. BUEMI</strong></h5>
-							        </td>
-							        <td><h6>+11.381</h6></td>
-							        <td><h6>58:20:769</h6></td>
-							        <td><h6>98.4 / 61.1</h6></td>
-							        <td><h6>49</h6></td>
-							    </tr>
-							    <tr>	
-							        <td>
-							        	<div class="number-circle"><strong>1</strong>
-							        	</div>
-							        <td>
-							        	<img src="img/racers/sebastian-buemi.png" style="height: 25px; width: 25px;">
-							        </td>
-							        <td>
-							        	<h6>RENAULT E.DAMS</h6>
-							        	<h5><strong>9 S. BUEMI</strong></h5>
-							        </td>
-							        <td><h6>+11.381</h6></td>
-							        <td><h6>58:20:769</h6></td>
-							        <td><h6>98.4 / 61.1</h6></td>
-							        <td><h6>49</h6></td>
-							    </tr>
-							    <tr>	
-							        <td>
-							        	<div class="number-circle"><strong>1</strong>
-							        	</div>
-							        <td>
-							        	<img src="img/racers/sebastian-buemi.png" style="height: 25px; width: 25px;">
-							        </td>
-							        <td>
-							        	<h6>RENAULT E.DAMS</h6>
-							        	<h5><strong>9 S. BUEMI</strong></h5>
-							        </td>
-							        <td><h6>+11.381</h6></td>
-							        <td><h6>58:20:769</h6></td>
-							        <td><h6>98.4 / 61.1</h6></td>
-							        <td><h6>49</h6></td>
-							    </tr>
-							    <tr>	
-							        <td>
-							        	<div class="number-circle"><strong>1</strong>
-							        	</div>
-							        <td>
-							        	<img src="img/racers/sebastian-buemi.png" style="height: 25px; width: 25px;">
-							        </td>
-							        <td>
-							        	<h6>RENAULT E.DAMS</h6>
-							        	<h5><strong>9 S. BUEMI</strong></h5>
-							        </td>
-							        <td><h6>+11.381</h6></td>
-							        <td><h6>58:20:769</h6></td>
-							        <td><h6>98.4 / 61.1</h6></td>
-							        <td><h6>49</h6></td>
-							    </tr>
-							    <tr>	
-							        <td>
-							        	<div class="number-circle"><strong>1</strong>
-							        	</div>
-							        <td>
-							        	<img src="img/racers/sebastian-buemi.png" style="height: 25px; width: 25px;">
-							        </td>
-							        <td>
-							        	<h6>RENAULT E.DAMS</h6>
-							        	<h5><strong>9 S. BUEMI</strong></h5>
-							        </td>
-							        <td><h6>+11.381</h6></td>
-							        <td><h6>58:20:769</h6></td>
-							        <td><h6>98.4 / 61.1</h6></td>
-							        <td><h6>49</h6></td>
-							    </tr>
-							    <tr>	
-							        <td>
-							        	<div class="number-circle"><strong>1</strong>
-							        	</div>
-							        <td>
-							        	<img src="img/racers/sebastian-buemi.png" style="height: 25px; width: 25px;">
-							        </td>
-							        <td>
-							        	<h6>RENAULT E.DAMS</h6>
-							        	<h5><strong>9 S. BUEMI</strong></h5>
-							        </td>
-							        <td><h6>+11.381</h6></td>
-							        <td><h6>58:20:769</h6></td>
-							        <td><h6>98.4 / 61.1</h6></td>
-							        <td><h6>49</h6></td>
-							    </tr>
-							    <tr>	
-							        <td>
-							        	<div class="number-circle"><strong>1</strong>
-							        	</div>
-							        <td>
-							        	<img src="img/racers/sebastian-buemi.png" style="height: 25px; width: 25px;">
-							        </td>
-							        <td>
-							        	<h6>RENAULT E.DAMS</h6>
-							        	<h5><strong>9 S. BUEMI</strong></h5>
-							        </td>
-							        <td><h6>+11.381</h6></td>
-							        <td><h6>58:20:769</h6></td>
-							        <td><h6>98.4 / 61.1</h6></td>
-							        <td><h6>49</h6></td>
-							    </tr>
-							    <tr>	
-							        <td>
-							        	<div class="number-circle"><strong>1</strong>
-							        	</div>
-							        <td>
-							        	<img src="img/racers/sebastian-buemi.png" style="height: 25px; width: 25px;">
-							        </td>
-							        <td>
-							        	<h6>RENAULT E.DAMS</h6>
-							        	<h5><strong>9 S. BUEMI</strong></h5>
-							        </td>
-							        <td><h6>+11.381</h6></td>
-							        <td><h6>58:20:769</h6></td>
-							        <td><h6>98.4 / 61.1</h6></td>
-							        <td><h6>49</h6></td>
-							    </tr>
-							    <tr>	
-							        <td>
-							        	<div class="number-circle"><strong>1</strong>
-							        	</div>
-							        <td>
-							        	<img src="img/racers/sebastian-buemi.png" style="height: 25px; width: 25px;">
-							        </td>
-							        <td>
-							        	<h6>RENAULT E.DAMS</h6>
-							        	<h5><strong>9 S. BUEMI</strong></h5>
-							        </td>
-							        <td><h6>+11.381</h6></td>
-							        <td><h6>58:20:769</h6></td>
-							        <td><h6>98.4 / 61.1</h6></td>
-							        <td><h6>49</h6></td>
-							    </tr>
+						    <tbody id="latest-standings-table">
 						    </tbody>
 						  </table>
 	          		</div>

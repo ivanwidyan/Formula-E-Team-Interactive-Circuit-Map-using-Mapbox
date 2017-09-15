@@ -152,6 +152,9 @@ var style = [{
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbndpZHlhbiIsImEiOiJjaXpvNmx6OXQwMDE0MnFucTJhODNzcnJzIn0.17aFDly4h5iOl-o_21e4yw';
 
+var layerIDs = ['restaurant', 'toilet', 'hospital', 'seat', 'merchandise', 'stand'];
+var filterInput = document.getElementById('filter-input');
+
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/ivanwidyan/cj1oocv30003q2so152mtuqkb',
@@ -273,7 +276,7 @@ map.on('load', function() {
         "filter": ["==", "name", "TV"]
     });
     map.addLayer({
-        "id": "paris_toilet",
+        "id": "toilet",
         "type": "symbol",
         "source": "paris_circuit",
         "source-layer": 'Circuit_Des_Invalides',
@@ -288,7 +291,7 @@ map.on('load', function() {
         "filter": ["==", "name", "toilet"]
     });
     map.addLayer({
-        "id": "paris_restaurant",
+        "id": "restaurant",
         "type": "symbol",
         "source": "paris_circuit",
         "source-layer": 'Circuit_Des_Invalides',
@@ -303,7 +306,7 @@ map.on('load', function() {
         "filter": ["==", "name", "restaurant"]
     });
     map.addLayer({
-        "id": "paris_hospital",
+        "id": "hospital",
         "type": "symbol",
         "source": "paris_circuit",
         "source-layer": 'Circuit_Des_Invalides',
@@ -318,7 +321,7 @@ map.on('load', function() {
         "filter": ["==", "name", "medic"]
     });
     map.addLayer({
-        "id": "paris_merchandise",
+        "id": "merchandise",
         "type": "symbol",
         "source": "paris_circuit",
         "source-layer": 'Circuit_Des_Invalides',
@@ -373,7 +376,7 @@ map.on('load', function() {
         "filter": ["==", "name", "T"]
     });
     map.addLayer({
-        'id': 'paris_seat',
+        'id': 'seat',
         'source': 'paris_circuit',
         'source-layer': 'Circuit_Des_Invalides',
         'filter': ['==', 'extrude', 'true'],
@@ -386,6 +389,21 @@ map.on('load', function() {
             'fill-extrusion-opacity': 0.5
         },
          "filter": ["==", "name", "seat"]
+    });
+    map.addLayer({
+        'id': 'stand',
+        'source': 'paris_circuit',
+        'source-layer': 'Circuit_Des_Invalides',
+        'filter': ['==', 'extrude', 'true'],
+        'type': 'fill-extrusion',
+        'minzoom': 15,
+        'paint': {
+            'fill-extrusion-color': '#00FF00',
+            'fill-extrusion-height': 15,
+            'fill-extrusion-base': 0,
+            'fill-extrusion-opacity': 0.5
+        },
+         "filter": ["==", "name", "stand"]
     });
     map.addLayer({
         'id': '3d-buildings',
@@ -407,4 +425,80 @@ map.on('load', function() {
             'fill-extrusion-opacity': 0.25
         }
     },'paris-circuit');
+
+    var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
+
+    map.on('mouseenter', 'stand', function (e) {
+        map.getCanvas().style.cursor = 'pointer';
+        popup.setLngLat(e.lngLat)
+            .setHTML("<img src=" + e.features[0].properties.photo +
+                    " width='150px' height='auto' margin='0'><h6 align=center>" + 
+                    e.features[0].properties.details + 
+                    "</h6><p align=center>" + 
+                    e.features[0].properties.description + 
+                    "</p>")
+            .addTo(map);
+    });
+    map.on('mouseleave', 'stand', function () {
+        map.getCanvas().style.cursor = '';
+        popup.remove();
+    });
+
+    var pointsId = ['restaurant', 'merchandise'];
+    for (var i = 0; i < pointsId.length; i++) {
+        var id = pointsId[i];
+        map.on('mousemove', id, function(e) {
+            map.getCanvas().style.cursor = 'pointer';
+            popup.setLngLat(e.features[0].geometry.coordinates)
+                .setHTML("<img src=" + e.features[0].properties.photo +
+                    " width='150px' height='auto' margin='0'><h6 align=center>" + 
+                    e.features[0].properties.details + 
+                    "</h6><p align=center>" + 
+                    e.features[0].properties.description + 
+                    "</p>")
+                .addTo(map);
+        });
+
+        map.on('mouseleave', id, function() {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+        });
+    }
 });
+
+filterInput.addEventListener('keyup', function(e) {
+    var value = e.target.value.trim().toLowerCase();
+    layerIDs.forEach(function(layerID) {
+        map.setLayoutProperty(layerID, 'visibility',
+            layerID.indexOf(value) > -1 ? 'visible' : 'none');
+    });
+});
+
+var toggleableLayerIds = [ 'toilet', 'restaurant', 'hospital', 'merchandise'];
+for (var i = 0; i < toggleableLayerIds.length; i++) {
+    var id = toggleableLayerIds[i];
+
+    var link = document.getElementById(id);
+    var legendsName = link.getElementsByTagName("p");
+
+    link.onclick = function (e) {
+        var clickedLayer = this.id;
+        var legendsName = this.getElementsByTagName("p");
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+
+        if (visibility === 'visible') {
+            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+            legendsName[0].className = '';
+        } else {
+            legendsName[0].className = 'text-gradient';
+            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+        }
+    };
+}

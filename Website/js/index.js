@@ -24,7 +24,6 @@
   // USER INFORMATIONS
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      console.log('user');
       // User is signed in.
       const displayName = user.displayName;
       const email = user.email;
@@ -59,6 +58,24 @@
   }, function(error) {
     console.log(error);
   });
+
+  // LATEST-STANDINGS ELEMENTS
+const latestStandingsList = document.getElementById('latest-standings-table');
+
+// REFERENCES
+const dbRefLatestStandingList = firebase.database().ref().child('latest-results');
+dbRefLatestStandingList.on('value', snap => console.log(snap.val()));
+
+// TEST
+
+var keys = firebase.database().ref().child('latest-results/').once('value').then(function(datakey){
+    datakey.forEach(function(data){
+        var driver = data.val();
+        var button = $('<tr><td><div class="number-circle"><strong>'+driver.pos+'</strong></div><td><div class="player-circle-xsmall"><img class="img-circle" src="'+driver.photo+'"></div></td><td><h6>'+driver.team+'</h6><h5><strong>'+ driver.driver +'</strong></h5></td><td><h6>'+driver.gap+'</h6></td><td><h6>'+driver.time+'</h6></td><td><h6>'+driver.kphmph+'</h6></td><td><h6>'+driver.lap+'</h6></td></tr>');
+        button.appendTo('#latest-standings-table'); 
+    });
+});
+
 }());
 
 $(function(){
